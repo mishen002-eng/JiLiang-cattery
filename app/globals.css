@@ -1,26 +1,133 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-body);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-heading);
+
+  /* Brand colors */
+  --color-brand-cream: #FAF7F2;
+  --color-brand-charcoal: #2C2C2C;
+  --color-brand-slate: #6B7B8D;
+  --color-brand-slate-light: #8A9BAD;
+  --color-brand-brass: #B8956A;
+  --color-brand-brass-light: #D4B896;
+  --color-brand-brass-dark: #9A7B55;
+  --color-brand-ice: #E8EDF2;
+  --color-brand-ice-dark: #D1D9E2;
+  --color-brand-white: #FFFFFF;
+
+  /* shadcn overrides */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #FAF7F2;
+  --foreground: #2C2C2C;
+  --card: #FFFFFF;
+  --card-foreground: #2C2C2C;
+  --popover: #FFFFFF;
+  --popover-foreground: #2C2C2C;
+  --primary: #B8956A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E8EDF2;
+  --secondary-foreground: #2C2C2C;
+  --muted: #E8EDF2;
+  --muted-foreground: #6B7B8D;
+  --accent: #E8EDF2;
+  --accent-foreground: #2C2C2C;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #D1D9E2;
+  --input: #D1D9E2;
+  --ring: #B8956A;
+  --chart-1: #B8956A;
+  --chart-2: #6B7B8D;
+  --chart-3: #D4B896;
+  --chart-4: #8A9BAD;
+  --chart-5: #9A7B55;
+  --radius: 0.625rem;
+  --sidebar: #FAF7F2;
+  --sidebar-foreground: #2C2C2C;
+  --sidebar-primary: #B8956A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E8EDF2;
+  --sidebar-accent-foreground: #2C2C2C;
+  --sidebar-border: #D1D9E2;
+  --sidebar-ring: #B8956A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight text-brand-charcoal;
+  }
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl; }
+  h2 { @apply text-3xl md:text-4xl; }
+  h3 { @apply text-2xl md:text-3xl; }
+  h4 { @apply text-xl md:text-2xl; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .section-padding {
+    @apply py-16 px-4 md:py-24 md:px-6;
+  }
+  .container-narrow {
+    @apply mx-auto max-w-5xl px-4;
+  }
+  .container-wide {
+    @apply mx-auto max-w-7xl px-4;
+  }
 }
