@@ -1,3 +1,5 @@
+"use client";
+
 import { Award, HeartPulse, Smile, Truck } from "lucide-react";
 import Link from "next/link";
 

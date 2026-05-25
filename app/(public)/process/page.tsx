@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Adoption Process",
@@ -114,7 +113,7 @@ export default function ProcessPage() {
           <div className="mx-auto mt-8 max-w-lg">
             {included.map((item) => (
               <div key={item} className="flex items-center gap-3 border-b border-brand-ice py-3 last:border-0">
-                <Check className="h-5 w-5 shrink-0 text-emerald-600" />
+                <svg className="h-5 w-5 shrink-0 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                 <span className="text-brand-charcoal">{item}</span>
               </div>
             ))}

@@ -1,3 +1,5 @@
+"use client";
+
 import { ClipboardList, Clock, Camera, CreditCard, Truck, Mail } from "lucide-react";
 import Link from "next/link";
 
