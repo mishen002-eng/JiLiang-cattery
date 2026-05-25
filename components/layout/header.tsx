@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X, ChevronDown, Award, HeartPulse, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -47,28 +49,40 @@ function LocationSwitcher({ className }: { className?: string }) {
   const { location, setLocation } = useLocation();
 
   return (
-    <div className={cn("flex rounded-full bg-brand-ice p-1 text-sm", className)}>
+    <div className={cn("flex rounded-full bg-[#f9f4ee] p-1 text-sm", className)}>
       <button
         onClick={() => setLocation("atlanta")}
         className={cn(
-          "cursor-pointer rounded-full px-3 py-1 transition-colors",
+          "inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1 transition-colors",
           location === "atlanta"
             ? "bg-brand-charcoal text-white"
-            : "text-brand-slate hover:text-brand-charcoal"
+            : "bg-[#f9f4ee] text-brand-slate hover:text-brand-charcoal"
         )}
       >
-        Atlanta 🇺🇸
+        Atlanta
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/flags/us.svg"
+          alt="United States"
+          className="h-auto w-5 shrink-0 rounded-[2px] ring-1 ring-black/10"
+        />
       </button>
       <button
         onClick={() => setLocation("toronto")}
         className={cn(
-          "cursor-pointer rounded-full px-3 py-1 transition-colors",
+          "inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1 transition-colors",
           location === "toronto"
             ? "bg-brand-charcoal text-white"
-            : "text-brand-slate hover:text-brand-charcoal"
+            : "bg-[#f9f4ee] text-brand-slate hover:text-brand-charcoal"
         )}
       >
-        Toronto 🇨🇦
+        Toronto
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/flags/ca.svg"
+          alt="Canada"
+          className="h-auto w-5 shrink-0 rounded-[2px] ring-1 ring-black/10"
+        />
       </button>
     </div>
   );
@@ -78,16 +92,23 @@ function NavDropdown({
   label,
   href,
   children,
+  active,
 }: {
   label: string;
   href: string;
   children: { href: string; label: string }[];
+  active?: boolean;
 }) {
   return (
     <div className="group relative">
       <Link
         href={href}
-        className="flex items-center gap-1 text-sm font-medium text-brand-charcoal transition-colors hover:text-brand-brass"
+        className={cn(
+          "flex items-center gap-1 border-b-2 pb-1 text-sm font-medium transition-colors",
+          active
+            ? "border-brand-charcoal text-brand-charcoal"
+            : "border-transparent text-brand-charcoal hover:text-brand-brass"
+        )}
       >
         {label}
         <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
@@ -111,11 +132,14 @@ function NavDropdown({
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header className="sticky top-0 z-50">
       {/* Trust Bar */}
-      <div className="border-b border-brand-ice-dark bg-brand-cream">
+      <div className="border-b border-brand-ice-dark bg-[#f9f4ee]">
         <div className="container-wide flex h-9 items-center justify-between">
           <div className="flex items-center gap-6">
             {trustBarItems.map((item) => (
@@ -131,17 +155,22 @@ export function Header() {
 
       {/* Main Navigation */}
       <nav className="border-b border-brand-ice-dark bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-        <div className="container-wide flex h-16 items-center justify-between">
+        <div className="container-wide flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-cream">
-              <span className="text-lg">🐱</span>
-            </div>
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/images/logo/jiliang_cat_logo_transparent_2x.png"
+              alt="Jiliang Cattery logo"
+              width={2180}
+              height={2490}
+              priority
+              className="h-14 w-auto"
+            />
             <div className="flex flex-col leading-tight">
-              <span className="font-heading text-lg font-bold tracking-tight text-brand-charcoal">
+              <span className="font-heading text-[27px] font-normal tracking-tight text-brand-charcoal">
                 JILIANG
               </span>
-              <span className="text-[10px] font-medium tracking-[0.2em] text-brand-slate uppercase">
+              <span className="text-[15px] font-light tracking-[0.3em] text-brand-slate uppercase">
                 CATTERY
               </span>
             </div>
@@ -156,12 +185,20 @@ export function Header() {
                   label={link.label}
                   href={link.href}
                   children={link.children}
+                  active={
+                    isActive(link.href) || link.children.some((c) => isActive(c.href))
+                  }
                 />
               ) : (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-brand-charcoal transition-colors hover:text-brand-brass"
+                  className={cn(
+                    "border-b-2 pb-1 text-sm font-medium transition-colors",
+                    isActive(link.href)
+                      ? "border-brand-charcoal text-brand-charcoal"
+                      : "border-transparent text-brand-charcoal hover:text-brand-brass"
+                  )}
                 >
                   {link.label}
                 </Link>
