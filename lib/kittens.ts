@@ -65,13 +65,16 @@ export const kittens: Kitten[] = [
     priceUSD: 2800,
     priceCAD: 3800,
     location: "atlanta",
-    status: "adopted",
+    status: "at_home",
     photos: ["/images/cats/placeholder.svg"],
     sire: "Lord Ashton",
     dam: "Duchess Willow",
     personality:
       "Oliver is a laid-back gentleman who enjoys lounging in sunbeams. He gets along wonderfully with children and other pets.",
     registeredName: "Jiliang's Oliver Twist",
+    homeDate: "2026-03-15",
+    familyStory:
+      "Oliver found his forever home with the Chen family in Atlanta. He settled in instantly, claiming the sunniest spot on the sofa and charming every visitor with his gentle nature.",
   },
   {
     id: "tor-001",
@@ -137,12 +140,15 @@ export const kittens: Kitten[] = [
     priceUSD: 2800,
     priceCAD: 3800,
     location: "toronto",
-    status: "adopted",
+    status: "at_home",
     photos: ["/images/cats/placeholder.svg"],
     sire: "Grand Duke Sterling",
     dam: "Belle of Toronto",
     personality:
       "Hugo is a robust, friendly boy who loves everyone he meets. He adjusted instantly to his new family and is thriving in his forever home.",
     registeredName: "Jiliang's Hugo Boss",
+    homeDate: "2026-02-20",
+    familyStory:
+      "Hugo joined the Martins in Toronto and immediately became the heart of their home. His playful energy and warmth have made him inseparable from their two young children.",
   },
 ];

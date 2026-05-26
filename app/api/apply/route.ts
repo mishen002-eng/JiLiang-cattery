@@ -18,17 +18,11 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true });
     }
 
-    const locationEmail =
-      result.data.preferredLocation === "toronto"
-        ? "toronto@jiliangcattery.com"
-        : "atlanta@jiliangcattery.com";
-
     // Log for development — replace with Resend in production
     console.log("New application received:", {
       name: `${result.data.firstName} ${result.data.lastName}`,
       email: result.data.email,
-      location: result.data.preferredLocation,
-      routeTo: locationEmail,
+      country: result.data.country,
     });
 
     // TODO: Wire up Resend email

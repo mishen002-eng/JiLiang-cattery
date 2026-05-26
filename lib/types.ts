@@ -1,5 +1,5 @@
 export type CatteryLocation = "atlanta" | "toronto";
-export type KittenStatus = "available" | "reserved" | "adopted" | "upcoming";
+export type KittenStatus = "available" | "reserved" | "adopted" | "upcoming" | "at_home";
 export type Sex = "male" | "female";
 
 export interface Kitten {
@@ -16,8 +16,10 @@ export interface Kitten {
   photos: string[];
   sire: string;
   dam: string;
-  personality: string;
+  personality?: string;
   registeredName?: string;
+  homeDate?: string;
+  familyStory?: string;
 }
 
 export interface BreedingCat {

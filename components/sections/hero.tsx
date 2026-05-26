@@ -44,7 +44,7 @@ export function Hero() {
         <div className="relative w-full flex-1">
           <div className="relative h-[340px] w-full overflow-hidden rounded-2xl md:h-[440px] lg:h-[540px]">
             <Image
-              src="/images/cats/placeholder.svg"
+              src="/images/banner/hero-banner.jpg"
               alt="Beautiful British Shorthair cat"
               fill
               className="object-cover"

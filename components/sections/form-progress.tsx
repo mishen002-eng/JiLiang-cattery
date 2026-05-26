@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 
-const stepLabels = ["About You", "Location", "Your Home", "Preferences", "References", "Review"];
+const stepLabels = ["About You", "Your Home", "Your Kitten", "Commitments", "Review"];
 
 interface FormProgressProps {
   currentStep: number;

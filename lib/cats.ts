@@ -11,7 +11,7 @@ export const breedingCats: BreedingCat[] = [
     color: "Blue",
     pattern: "Solid",
     location: "atlanta",
-    photos: ["/images/cats/placeholder.svg"],
+    photos: ["/images/cats/parent-cat-1.jpg"],
     healthTests: ["HCM Normal", "PKD Negative", "FeLV/FIV Negative", "Blood Type A"],
     titles: ["Grand Champion"],
     pedigreeNotes:
@@ -29,7 +29,7 @@ export const breedingCats: BreedingCat[] = [
     color: "Cinnamon",
     pattern: "Solid",
     location: "atlanta",
-    photos: ["/images/cats/placeholder.svg"],
+    photos: ["/images/cats/parent-cat-2.jpg"],
     healthTests: ["HCM Normal", "PKD Negative", "FeLV/FIV Negative", "Blood Type A"],
     titles: ["Champion"],
     pedigreeNotes:
@@ -48,7 +48,7 @@ export const breedingCats: BreedingCat[] = [
     color: "Blue",
     pattern: "Solid",
     location: "atlanta",
-    photos: ["/images/cats/placeholder.svg"],
+    photos: ["/images/cats/parent-cat-3.jpg"],
     healthTests: ["HCM Normal", "PKD Negative", "FeLV/FIV Negative", "Blood Type A"],
     titles: ["Grand Champion", "Regional Winner"],
     pedigreeNotes:
@@ -67,7 +67,7 @@ export const breedingCats: BreedingCat[] = [
     color: "Golden Shaded",
     pattern: "Shaded",
     location: "toronto",
-    photos: ["/images/cats/placeholder.svg"],
+    photos: ["/images/cats/parent-cat-4.jpg"],
     healthTests: ["HCM Normal", "PKD Negative", "FeLV/FIV Negative", "Blood Type A"],
     titles: ["Grand Champion"],
     pedigreeNotes:

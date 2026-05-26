@@ -35,14 +35,18 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white">
-                <span className="text-lg">🐱</span>
-              </div>
+              <Image
+                src="/images/logo/jiliang_cat_logo_transparent_2x.png"
+                alt="Jiliang Cattery logo"
+                width={2180}
+                height={2490}
+                className="h-10 w-auto"
+              />
               <div className="flex flex-col leading-tight">
-                <span className="font-heading text-lg font-bold tracking-tight text-brand-charcoal">
+                <span className="font-heading text-[19px] font-normal tracking-tight text-brand-charcoal">
                   JILIANG
                 </span>
-                <span className="text-[10px] font-medium tracking-[0.2em] text-brand-slate uppercase">
+                <span className="text-[11px] font-light tracking-[0.3em] text-brand-slate uppercase">
                   CATTERY
                 </span>
               </div>

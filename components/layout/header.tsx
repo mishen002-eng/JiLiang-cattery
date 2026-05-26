@@ -7,7 +7,6 @@ import { useState } from "react";
 import { Menu, X, ChevronDown, Award, HeartPulse, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
-import { useLocation, type Location } from "./location-provider";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -18,16 +17,10 @@ const navLinks = [
     children: [
       { href: "/our-cats", label: "Queens & Kings" },
       { href: "/gallery", label: "Gallery" },
+      { href: "/available", label: "Past Litters" },
     ],
   },
-  {
-    label: "Kittens",
-    href: "/available",
-    children: [
-      { href: "/available", label: "Available Kittens" },
-      { href: "/apply", label: "Kitten Application" },
-    ],
-  },
+  { href: "/apply", label: "Kitten Application" },
   {
     label: "Information",
     href: "/process",
@@ -45,48 +38,6 @@ const trustBarItems = [
   { icon: Globe, label: "Worldwide Delivery" },
 ];
 
-function LocationSwitcher({ className }: { className?: string }) {
-  const { location, setLocation } = useLocation();
-
-  return (
-    <div className={cn("flex rounded-full bg-[#f9f4ee] p-1 text-sm", className)}>
-      <button
-        onClick={() => setLocation("atlanta")}
-        className={cn(
-          "inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1 transition-colors",
-          location === "atlanta"
-            ? "bg-brand-charcoal text-white"
-            : "bg-[#f9f4ee] text-brand-slate hover:text-brand-charcoal"
-        )}
-      >
-        Atlanta
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/flags/us.svg"
-          alt="United States"
-          className="h-auto w-5 shrink-0 rounded-[2px] ring-1 ring-black/10"
-        />
-      </button>
-      <button
-        onClick={() => setLocation("toronto")}
-        className={cn(
-          "inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1 transition-colors",
-          location === "toronto"
-            ? "bg-brand-charcoal text-white"
-            : "bg-[#f9f4ee] text-brand-slate hover:text-brand-charcoal"
-        )}
-      >
-        Toronto
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/flags/ca.svg"
-          alt="Canada"
-          className="h-auto w-5 shrink-0 rounded-[2px] ring-1 ring-black/10"
-        />
-      </button>
-    </div>
-  );
-}
 
 function NavDropdown({
   label,
@@ -149,7 +100,6 @@ export function Header() {
               </div>
             ))}
           </div>
-          <LocationSwitcher />
         </div>
       </div>
 

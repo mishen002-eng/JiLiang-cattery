@@ -1,23 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BreedingCatCard } from "@/components/sections/breeding-cat-card";
-import { useLocation } from "@/components/layout/location-provider";
 import type { BreedingCat } from "@/lib/types";
 
 export default function OurCatsPage() {
-  const { location } = useLocation();
   const [breedingCats, setBreedingCats] = useState<BreedingCat[]>([]);
 
   useEffect(() => {
     fetch("/api/cats").then((r) => r.json()).then(setBreedingCats);
   }, []);
 
-  const atlantaQueens = breedingCats.filter((c) => c.location === "atlanta" && c.role === "queen");
-  const atlantaKings = breedingCats.filter((c) => c.location === "atlanta" && c.role === "king");
-  const torontoQueens = breedingCats.filter((c) => c.location === "toronto" && c.role === "queen");
-  const torontoKings = breedingCats.filter((c) => c.location === "toronto" && c.role === "king");
+  const queens = breedingCats.filter((c) => c.role === "queen");
+  const kings = breedingCats.filter((c) => c.role === "king");
 
   return (
     <section className="section-padding bg-brand-cream">
@@ -28,42 +23,21 @@ export default function OurCatsPage() {
           TICA registered, and chosen for temperament, type, and genetic diversity.
         </p>
 
-        <Tabs defaultValue={location} className="mt-12">
-          <TabsList className="mx-auto flex w-fit">
-            <TabsTrigger value="atlanta">Atlanta 🇺🇸</TabsTrigger>
-            <TabsTrigger value="toronto">Toronto 🇨🇦</TabsTrigger>
-          </TabsList>
+        <div className="mt-12">
+          <h2 className="text-2xl">Our Queens</h2>
+          <div className="mt-6 grid gap-8 md:grid-cols-2">
+            {queens.map((cat) => (
+              <BreedingCatCard key={cat.id} cat={cat} />
+            ))}
+          </div>
 
-          <TabsContent value="atlanta" className="mt-8">
-            <h2 className="text-2xl">Our Queens</h2>
-            <div className="mt-6 grid gap-8 md:grid-cols-2">
-              {atlantaQueens.map((cat) => (
-                <BreedingCatCard key={cat.id} cat={cat} />
-              ))}
-            </div>
-            <h2 className="mt-12 text-2xl">Our King</h2>
-            <div className="mt-6 grid gap-8 md:grid-cols-2">
-              {atlantaKings.map((cat) => (
-                <BreedingCatCard key={cat.id} cat={cat} />
-              ))}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="toronto" className="mt-8">
-            <h2 className="text-2xl">Our Queens</h2>
-            <div className="mt-6 grid gap-8 md:grid-cols-2">
-              {torontoQueens.map((cat) => (
-                <BreedingCatCard key={cat.id} cat={cat} />
-              ))}
-            </div>
-            <h2 className="mt-12 text-2xl">Our King</h2>
-            <div className="mt-6 grid gap-8 md:grid-cols-2">
-              {torontoKings.map((cat) => (
-                <BreedingCatCard key={cat.id} cat={cat} />
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+          <h2 className="mt-12 text-2xl">Our Kings</h2>
+          <div className="mt-6 grid gap-8 md:grid-cols-2">
+            {kings.map((cat) => (
+              <BreedingCatCard key={cat.id} cat={cat} />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
