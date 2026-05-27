@@ -20,9 +20,8 @@ export function FinalCTA() {
           </Button>
           <Button
             render={<Link href="/contact" />}
-            variant="outline"
             size="lg"
-            className="border-white text-base text-white hover:bg-white/10"
+            className="bg-white text-base text-brand-brass hover:bg-brand-cream"
           >
             Contact Us
           </Button>

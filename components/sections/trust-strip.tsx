@@ -8,7 +8,7 @@ const trustItems = [
     icon: Award,
     title: "About JILIANG Cattery",
     description:
-      "We are a small, experienced cattery specializing in British Shorthair. With over a decade of breeding experience, we focus on health, temperament and excellent type.",
+      "JILIANG is a registered British Shorthair cattery with 10+ years of experience. We focus on health, temperament and consistent type. Our cats carry selected bloodlines and a recognizable JILIANG style.",
     link: { href: "/about", label: "Learn more about us" },
   },
   {
@@ -45,7 +45,7 @@ export function TrustStrip() {
                 <item.icon className="h-6 w-6 text-brand-brass" />
               </div>
               <h3 className="text-base font-bold text-brand-charcoal">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-brand-slate">{item.description}</p>
+              <p className="mt-2 text-sm leading-snug text-brand-slate">{item.description}</p>
               {item.link && (
                 <Link
                   href={item.link.href}

@@ -1,21 +1,15 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { galleryImages } from "@/lib/gallery";
-import type { CatteryLocation } from "@/lib/types";
 
 export default function GalleryPage() {
-  const [filter, setFilter] = useState<"all" | CatteryLocation>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const filtered = useMemo(
-    () => (filter === "all" ? galleryImages : galleryImages.filter((img) => img.location === filter)),
-    [filter]
-  );
+  const filtered = galleryImages;
 
   const openLightbox = (index: number) => setLightboxIndex(index);
   const closeLightbox = () => setLightboxIndex(null);
@@ -36,26 +30,6 @@ export default function GalleryPage() {
           A glimpse into life at Jiliang Cattery — past and present kittens, our breeding cats, and
           precious moments.
         </p>
-
-        {/* Filter */}
-        <div className="mt-8 flex justify-center">
-          <div className="flex rounded-full bg-white p-1 text-sm shadow-sm">
-            {(["all", "atlanta", "toronto"] as const).map((f) => (
-              <button
-                key={f}
-                onClick={() => setFilter(f)}
-                className={cn(
-                  "cursor-pointer rounded-full px-4 py-1.5 transition-colors",
-                  filter === f
-                    ? "bg-brand-brass text-white"
-                    : "text-brand-slate hover:text-brand-charcoal"
-                )}
-              >
-                {f === "all" ? "All" : f === "atlanta" ? "Atlanta 🇺🇸" : "Toronto 🇨🇦"}
-              </button>
-            ))}
-          </div>
-        </div>
 
         {/* Masonry Grid */}
         <div className="mt-12 columns-2 gap-4 md:columns-3 lg:columns-4">

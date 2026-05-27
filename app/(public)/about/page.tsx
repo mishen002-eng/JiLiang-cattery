@@ -29,29 +29,31 @@ export default function AboutPage() {
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-brand-ice">
               <Image
-                src="/images/cats/placeholder.svg"
+                src="/images/About Us/未标题-2.jpg"
                 alt="Founder of Jiliang Cattery"
                 fill
                 className="object-cover"
               />
             </div>
             <div>
-              <h2>Our Story</h2>
+              <h2>Our Breeding Program</h2>
               <p className="mt-4 leading-relaxed text-brand-slate">
-                Jiliang Cattery was born from a deep love of the British Shorthair breed. What
-                started as a personal fascination with their plush coats and gentle personalities
-                grew into a careful, deliberate breeding program in Atlanta, Georgia.
+                JILIANG is an established, registered British Shorthair cattery built on more than a
+                decade of hands-on breeding experience. Over the years, our program has grown from a
+                small personal passion into a structured cattery with a clear standard, careful
+                selection, and long-term direction.
               </p>
               <p className="mt-4 leading-relaxed text-brand-slate">
-                Our foundation cats were imported from award-winning European bloodlines, chosen not
-                just for their stunning looks but for their sweet, even-tempered dispositions. From
-                the very beginning, our goal has been to produce kittens that are not only beautiful
-                but healthy, well-socialized, and ready to become cherished family members.
+                Our breeding work brings together selected lines from North America, Australia and
+                Europe, while continuing to develop our own understanding of the British Shorthair.
+                We value strong structure, balanced temperament, healthy development and the soft,
+                substantial expression that defines a quality British Shorthair.
               </p>
               <p className="mt-4 leading-relaxed text-brand-slate">
-                In 2024, we expanded to Toronto, Canada, bringing our standards and philosophy north
-                of the border. Whether in Atlanta or Toronto, every Jiliang kitten receives the same
-                exceptional care.
+                Show results have always been an important part of our journey, but they are not the
+                only measure of our work. For us, the real goal is to produce cats with consistent
+                quality, stable character and a recognizable JILIANG style — cats that represent
+                both thoughtful breeding and everyday companionship.
               </p>
             </div>
           </div>
@@ -100,36 +102,42 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* The Breed */}
+
+      {/* Our Story */}
       <section className="bg-white section-padding">
         <div className="container-narrow">
-          <div className="grid items-center gap-12 md:grid-cols-2">
-            <div>
-              <h2>Why British Shorthairs?</h2>
-              <p className="mt-4 leading-relaxed text-brand-slate">
-                The British Shorthair is one of the oldest and most beloved cat breeds in the world.
-                Known for their round faces, dense plush coats, and calm dispositions, they make
-                ideal companions for families, couples, and individuals alike.
-              </p>
-              <p className="mt-4 leading-relaxed text-brand-slate">
-                They are independent enough to be content when you are at work, but affectionate
-                enough to greet you at the door when you come home. They are gentle with children,
-                tolerant of dogs, and get along beautifully with other cats.
-              </p>
-              <p className="mt-4 leading-relaxed text-brand-slate">
-                At Jiliang, we breed for the classic British Shorthair type: round heads, cobby
-                bodies, and that signature dense coat. Our program includes blue, lilac, cinnamon,
-                chocolate, and golden shaded colors.
-              </p>
-            </div>
-            <div className="relative aspect-square overflow-hidden rounded-2xl bg-brand-ice">
-              <Image
-                src="/images/cats/placeholder.svg"
-                alt="Blue British Shorthair cat portrait"
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="relative aspect-[1579/1126] w-full overflow-hidden rounded-2xl bg-brand-ice mb-8">
+            <Image
+              src="/images/About Us/kkk.jpg"
+              alt="JILIANG Cattery"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <h2 className="mb-8">Our Story</h2>
+          <div className="flex flex-col gap-4">
+            <p className="leading-relaxed text-brand-slate">
+              Our story began with a blue British Shorthair imported from Europe. At the time, we
+              were based in Canada, learning the breed through daily care, show preparation, and
+              years of hands-on experience with the British Shorthair standard.
+            </p>
+            <p className="leading-relaxed text-brand-slate">
+              That first cat became an important part of our foundation and earned Best British
+              Shorthair recognition with CCA. More importantly, he is still living with us today —
+              not only as a show memory, but as family, and as the beginning of everything JILIANG
+              would become.
+            </p>
+            <p className="leading-relaxed text-brand-slate">
+              Over the years, our program has continued to grow. We introduced selected North
+              American, Australian and European lines, expanded into more colors, and gradually
+              developed our own direction in type, temperament and overall expression.
+            </p>
+            <p className="leading-relaxed text-brand-slate">
+              In 2024, JILIANG expanded to Atlanta, Georgia, establishing our U.S. branch while
+              continuing our journey in the CFA and TICA show rings. Today, our cats carry that
+              foundation forward — combining international bloodlines, thoughtful selection, and a
+              recognizable JILIANG style shaped by more than a decade of breeding.
+            </p>
           </div>
         </div>
       </section>
@@ -154,7 +162,7 @@ export default function AboutPage() {
               variant="outline"
               className="border-brand-brass text-brand-brass hover:bg-brand-brass hover:text-white"
             >
-              Available Kittens
+              Our Past Litters
             </Button>
           </div>
         </div>
