@@ -1,6 +1,8 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import type { Kitten } from "./types";
+import type { ReactNode } from "react";
+import { createElement, Fragment } from "react";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -13,6 +15,17 @@ export function formatPrice(kitten: Kitten, currency: "USD" | "CAD"): string {
     currency,
     maximumFractionDigits: 0,
   }).format(amount);
+}
+
+/** Wraps & characters in a font-sans span so they don't render as the decorative Playfair Display glyph in headings. */
+export function withSansAmpersand(text: string): ReactNode {
+  const parts = text.split(" & ");
+  if (parts.length === 1) return text;
+  return createElement(Fragment, null, ...parts.flatMap((part, i) =>
+    i < parts.length - 1
+      ? [part, createElement("span", { key: i, className: "font-sans mx-1" }, "&")]
+      : [part]
+  ));
 }
 
 export function getAge(dob: string): string {

@@ -2,6 +2,7 @@
 
 import { ClipboardList, Clock, Camera, CreditCard, Truck, Mail } from "lucide-react";
 import Link from "next/link";
+import { withSansAmpersand } from "@/lib/utils";
 
 const steps = [
   {
@@ -55,7 +56,7 @@ export function HowItWorks() {
                 <div className="mt-3 flex h-7 w-7 items-center justify-center rounded-full bg-brand-brass text-xs font-bold text-white">
                   {step.number}
                 </div>
-                <h3 className="mt-2 text-sm font-bold text-brand-charcoal">{step.title}</h3>
+                <h3 className="mt-2 text-sm font-bold text-brand-charcoal">{withSansAmpersand(step.title)}</h3>
                 <p className="mt-1.5 text-xs leading-relaxed text-brand-slate">
                   {step.description}
                 </p>
