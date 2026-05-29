@@ -15,7 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail } from "lucide-react";
 import { contactSchema, type ContactFormData } from "@/lib/schemas";
 
 export default function ContactPage() {
@@ -65,9 +65,9 @@ export default function ContactPage() {
           We typically respond within 24–48 hours.
         </p>
 
-        <div className="mt-12 grid gap-12 lg:grid-cols-2">
+        <div className="mt-12">
           {/* Contact Form */}
-          <div>
+          <div className="mx-auto max-w-lg">
             {submitted ? (
               <Card className="border-brand-ice-dark">
                 <CardContent className="p-8 text-center">
@@ -120,62 +120,6 @@ export default function ContactPage() {
             )}
           </div>
 
-          {/* Location Info */}
-          <div className="space-y-6">
-            <Card className="border-brand-ice-dark">
-              <CardContent className="p-6">
-                <h3 className="text-lg">Atlanta, GA 🇺🇸</h3>
-                <div className="mt-4 space-y-3">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-brass" />
-                    <p className="text-sm text-brand-slate">123 Peachtree Lane, Atlanta, GA 30301</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-4 w-4 shrink-0 text-brand-brass" />
-                    <p className="text-sm text-brand-slate">atlanta@jiliangcattery.com</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-4 w-4 shrink-0 text-brand-brass" />
-                    <p className="text-sm text-brand-slate">(404) 555-0123</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Clock className="h-4 w-4 shrink-0 text-brand-brass" />
-                    <p className="text-sm text-brand-slate">By appointment only</p>
-                  </div>
-                </div>
-                <div className="mt-4 aspect-video rounded-lg bg-brand-ice flex items-center justify-center text-sm text-brand-slate">
-                  Google Map — Atlanta
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-brand-ice-dark">
-              <CardContent className="p-6">
-                <h3 className="text-lg">Toronto, ON 🇨🇦</h3>
-                <div className="mt-4 space-y-3">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-brass" />
-                    <p className="text-sm text-brand-slate">456 Maple Avenue, Toronto, ON M5V 2T6</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-4 w-4 shrink-0 text-brand-brass" />
-                    <p className="text-sm text-brand-slate">toronto@jiliangcattery.com</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-4 w-4 shrink-0 text-brand-brass" />
-                    <p className="text-sm text-brand-slate">(416) 555-0456</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Clock className="h-4 w-4 shrink-0 text-brand-brass" />
-                    <p className="text-sm text-brand-slate">By appointment only</p>
-                  </div>
-                </div>
-                <div className="mt-4 aspect-video rounded-lg bg-brand-ice flex items-center justify-center text-sm text-brand-slate">
-                  Google Map — Toronto
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </section>

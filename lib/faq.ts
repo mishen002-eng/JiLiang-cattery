@@ -41,7 +41,7 @@ export const faqItems: FAQItem[] = [
     category: "Health",
     question: "What health testing do you perform?",
     answer:
-      "All of our breeding cats are tested for HCM (hypertrophic cardiomyopathy) via echocardiogram, PKD (polycystic kidney disease) via DNA test, and FeLV/FIV via blood test. Kittens receive age-appropriate vaccinations, deworming, and a thorough veterinary health exam before going home. We provide a 2-year genetic health guarantee covering HCM and PKD.",
+      "All of our breeding cats are tested for HCM, PKD, and FeLV/FIV through appropriate veterinary screening.\n\nKittens receive age-appropriate vaccinations during their first year, along with deworming, parasite prevention, and a full veterinary health examination before going home. PKD DNA testing is also completed prior to adoption, and kittens are spayed/neutered before placement unless otherwise agreed under breeding rights.\n\nWe provide a 3-year genetic health guarantee covering HCM and FIP, and a lifetime genetic health guarantee covering PKD.",
   },
   {
     id: "faq-7",

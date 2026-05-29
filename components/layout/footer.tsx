@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 const socialLinks = [
   {
@@ -125,15 +125,11 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-brand-slate" />
                 <a
-                  href="mailto:info@jiliangcattery.com"
+                  href="mailto:jiliangcattery@gmail.com"
                   className="text-sm text-brand-slate transition-colors hover:text-brand-brass"
                 >
-                  info@jiliangcattery.com
+                  jiliangcattery@gmail.com
                 </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-brand-slate" />
-                <span className="text-sm text-brand-slate">(404) 555-0123</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-brand-slate" />
