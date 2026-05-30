@@ -55,44 +55,63 @@ export default function GalleryPage() {
 
       {/* Lightbox */}
       <Dialog open={lightboxIndex !== null} onOpenChange={() => closeLightbox()}>
-        <DialogContent className="max-w-4xl border-0 bg-black/95 p-0">
+        <DialogContent
+          className="max-w-[90vw] sm:max-w-[90vw] border-0 !bg-transparent p-0 shadow-none ring-0 outline-none"
+          showCloseButton={false}
+        >
           <DialogTitle className="sr-only">
             {currentImage?.caption || "Gallery image"}
           </DialogTitle>
           {currentImage && (
-            <div className="relative flex items-center justify-center">
-              {lightboxIndex !== null && lightboxIndex > 0 && (
-                <button
-                  onClick={() => navigate(-1)}
-                  className="absolute left-2 z-10 cursor-pointer rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </button>
-              )}
+            <div
+              className="flex w-full flex-col items-center justify-center"
+              onClick={() => closeLightbox()}
+            >
+              <div className="flex items-center justify-center gap-3">
+                {lightboxIndex !== null && lightboxIndex > 0 ? (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(-1);
+                    }}
+                    className="cursor-pointer rounded-full bg-white/20 p-2 text-white hover:bg-white/40 shrink-0"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="h-6 w-6" />
+                  </button>
+                ) : (
+                  <div className="w-10 shrink-0" />
+                )}
 
-              <div className="relative aspect-[4/3] w-full">
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={currentImage.src}
                   alt={currentImage.alt}
-                  fill
-                  className="object-contain"
+                  onClick={(e) => e.stopPropagation()}
+                  className="block max-h-[85vh] max-w-[85vw] w-auto h-auto rounded-lg object-contain"
                 />
+
+                {lightboxIndex !== null && lightboxIndex < filtered.length - 1 ? (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(1);
+                    }}
+                    className="cursor-pointer rounded-full bg-white/20 p-2 text-white hover:bg-white/40 shrink-0"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="h-6 w-6" />
+                  </button>
+                ) : (
+                  <div className="w-10 shrink-0" />
+                )}
               </div>
 
-              {lightboxIndex !== null && lightboxIndex < filtered.length - 1 && (
-                <button
-                  onClick={() => navigate(1)}
-                  className="absolute right-2 z-10 cursor-pointer rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
-                  aria-label="Next image"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </button>
+              {currentImage.caption && (
+                <p className="mt-2 text-center text-sm text-white/80">
+                  {currentImage.caption}
+                </p>
               )}
-
-              <p className="absolute bottom-4 left-0 right-0 text-center text-sm text-white/80">
-                {currentImage.caption}
-              </p>
             </div>
           )}
         </DialogContent>

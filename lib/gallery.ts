@@ -1,6 +1,7 @@
 import type { GalleryImage } from "./types";
 
 export const galleryImages: GalleryImage[] = [
+  { src: "/images/gallery/ChatGPT Image 2026年5月29日 15_57_37.png", alt: "British Shorthair kitten", location: "atlanta", caption: "" },
   { src: "/images/cats/placeholder.svg", alt: "Blue British Shorthair kitten playing", location: "atlanta", caption: "Playtime in Atlanta" },
   { src: "/images/cats/placeholder.svg", alt: "Lilac British Shorthair lounging", location: "atlanta", caption: "Winston relaxing" },
   { src: "/images/cats/placeholder.svg", alt: "Cinnamon kitten exploring", location: "atlanta", caption: "Curious Cleo" },
