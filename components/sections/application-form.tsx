@@ -329,7 +329,7 @@ export function ApplicationForm() {
                     <SectionLabel>Landlord approval for pets?</SectionLabel>
                     <Select
                       value={values.landlordApproval ?? ""}
-                      onValueChange={(v) => setValue("landlordApproval", v)}
+                      onValueChange={(v) => setValue("landlordApproval", v ?? undefined)}
                     >
                       <SelectTrigger className="mt-1 w-full"><SelectValue placeholder="Select…" /></SelectTrigger>
                       <SelectContent>
@@ -423,7 +423,7 @@ export function ApplicationForm() {
                   <SectionLabel>Color preference</SectionLabel>
                   <Select
                     value={values.colorPreference ?? ""}
-                    onValueChange={(v) => setValue("colorPreference", v)}
+                    onValueChange={(v) => setValue("colorPreference", v ?? undefined)}
                   >
                     <SelectTrigger className="mt-1 w-full"><SelectValue placeholder="Select a color…" /></SelectTrigger>
                     <SelectContent>
