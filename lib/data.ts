@@ -15,12 +15,17 @@ function ensureDataDir() {
 }
 
 export function readKittens(): Kitten[] {
-  ensureDataDir();
-  if (!fs.existsSync(KITTENS_FILE)) {
-    fs.writeFileSync(KITTENS_FILE, JSON.stringify(seedKittens, null, 2));
+  try {
+    ensureDataDir();
+    if (!fs.existsSync(KITTENS_FILE)) {
+      fs.writeFileSync(KITTENS_FILE, JSON.stringify(seedKittens, null, 2));
+      return seedKittens;
+    }
+    return JSON.parse(fs.readFileSync(KITTENS_FILE, "utf-8"));
+  } catch {
+    // Filesystem is read-only (e.g. Vercel) — fall back to seed data
     return seedKittens;
   }
-  return JSON.parse(fs.readFileSync(KITTENS_FILE, "utf-8"));
 }
 
 export function writeKittens(kittens: Kitten[]) {
@@ -29,12 +34,17 @@ export function writeKittens(kittens: Kitten[]) {
 }
 
 export function readCats(): BreedingCat[] {
-  ensureDataDir();
-  if (!fs.existsSync(CATS_FILE)) {
-    fs.writeFileSync(CATS_FILE, JSON.stringify(seedCats, null, 2));
+  try {
+    ensureDataDir();
+    if (!fs.existsSync(CATS_FILE)) {
+      fs.writeFileSync(CATS_FILE, JSON.stringify(seedCats, null, 2));
+      return seedCats;
+    }
+    return JSON.parse(fs.readFileSync(CATS_FILE, "utf-8"));
+  } catch {
+    // Filesystem is read-only (e.g. Vercel) — fall back to seed data
     return seedCats;
   }
-  return JSON.parse(fs.readFileSync(CATS_FILE, "utf-8"));
 }
 
 export function writeCats(cats: BreedingCat[]) {
