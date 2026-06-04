@@ -40,7 +40,7 @@ export function TestimonialsSection() {
           {visible.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="rounded-2xl border border-brand-ice-dark bg-white p-6"
+              className="flex flex-col rounded-2xl border border-brand-ice-dark bg-white p-6"
             >
               {/* Stars */}
               <div className="flex gap-0.5">
@@ -53,7 +53,7 @@ export function TestimonialsSection() {
               </div>
 
               {/* Quote */}
-              <p className="mt-4 text-sm leading-relaxed text-brand-slate">
+              <p className="mt-4 flex-1 text-sm leading-relaxed text-brand-slate">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
 

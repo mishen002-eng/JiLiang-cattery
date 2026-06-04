@@ -21,8 +21,8 @@ export const testimonials: Testimonial[] = [
     id: "t3",
     author: "The Chen Family",
     location: "atlanta",
-    city: "Marietta, GA",
-    text: "After months on the waitlist, we finally welcomed our cinnamon girl home. She was already litter trained, socialized, and absolutely fearless. Jiliang Cattery truly sets the standard for ethical breeding.",
+    city: "New York, NY",
+    text: "After months on the waitlist, we finally welcomed our blue girl home. She was already litter trained, socialized, and absolutely fearless. Jiliang Cattery truly sets the standard for ethical breeding.",
     kittenName: "Rosie",
   },
   {
