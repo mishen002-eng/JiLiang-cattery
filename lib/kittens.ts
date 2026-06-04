@@ -56,24 +56,6 @@ export const kittens: Kitten[] = [
     registeredName: "Jiliang's Cleopatra",
   },
   {
-    id: "atl-004",
-    name: "Oliver",
-    dob: "2026-01-20",
-    sex: "male",
-    color: "Blue",
-    pattern: "Solid",
-    priceUSD: 2800,
-    priceCAD: 3800,
-    location: "atlanta",
-    status: "available",
-    photos: ["/images/cats/placeholder.svg"],
-    sire: "Lord Ashton",
-    dam: "Duchess Willow",
-    personality:
-      "Oliver is a laid-back gentleman who enjoys lounging in sunbeams. He gets along wonderfully with children and other pets.",
-    registeredName: "Jiliang's Oliver Twist",
-  },
-  {
     id: "tor-001",
     name: "Maple",
     dob: "2026-03-22",
@@ -126,23 +108,5 @@ export const kittens: Kitten[] = [
     personality:
       "Ivy is a dainty, elegant girl who carries herself with quiet confidence. She enjoys gentle play sessions and cozy naps by the fireplace.",
     registeredName: "Jiliang's Ivy League",
-  },
-  {
-    id: "tor-004",
-    name: "Hugo",
-    dob: "2026-01-05",
-    sex: "male",
-    color: "Blue",
-    pattern: "Solid",
-    priceUSD: 2800,
-    priceCAD: 3800,
-    location: "toronto",
-    status: "available",
-    photos: ["/images/cats/placeholder.svg"],
-    sire: "Grand Duke Sterling",
-    dam: "Belle of Toronto",
-    personality:
-      "Hugo is a robust, friendly boy who loves everyone he meets. He adjusted instantly to his new family and is thriving in his forever home.",
-    registeredName: "Jiliang's Hugo Boss",
   },
 ];
