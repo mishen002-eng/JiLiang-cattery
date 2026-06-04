@@ -7,12 +7,26 @@ export function BreedingCatCard({ cat }: { cat: BreedingCat }) {
   return (
     <Card className="overflow-hidden border-brand-ice-dark">
       <div className="relative aspect-square bg-brand-ice">
-        <Image
-          src={cat.photos[0]}
-          alt={`${cat.name} — ${cat.color} British Shorthair ${cat.role}`}
-          fill
-          className="object-cover"
-        />
+        {cat.photos[0] ? (
+          <Image
+            src={cat.photos[0]}
+            alt={`${cat.name} — ${cat.color} British Shorthair ${cat.role}`}
+            fill
+            className="object-cover"
+          />
+        ) : (
+          <div className="flex h-full flex-col items-center justify-center gap-2 text-brand-slate-light">
+            <Image
+              src="/images/cats/placeholder.svg"
+              alt="Photo coming soon"
+              width={64}
+              height={64}
+              className="opacity-40"
+            />
+            <span className="text-sm">British Shorthair</span>
+            <span className="text-xs">Photo Coming Soon</span>
+          </div>
+        )}
       </div>
       <CardContent className="p-6">
         <h3 className="text-xl">{cat.name}</h3>
@@ -20,7 +34,9 @@ export function BreedingCatCard({ cat }: { cat: BreedingCat }) {
 
         <div className="mt-3 flex flex-wrap gap-1.5">
           <Badge variant="outline" className="text-xs">
-            {cat.color} {cat.pattern}
+            {cat.pattern === "Solid"
+              ? cat.color.replace(/\bSolid\b\s*/g, "").trim()
+              : cat.color.includes(cat.pattern) ? cat.color : `${cat.color} ${cat.pattern}`}
           </Badge>
           {cat.titles.map((title) => (
             <Badge key={title} className="bg-brand-brass/10 text-xs text-brand-brass">

@@ -35,16 +35,6 @@ export function KittenCard({ kitten, onClick, variant = "sale" }: KittenCardProp
           <p className="text-sm text-brand-slate">
             {kitten.color} {kitten.pattern} &middot; {kitten.sex === "male" ? "Boy" : "Girl"}
           </p>
-          {kitten.homeDate && (
-            <p className="mt-1 text-xs text-brand-slate">
-              Home:{" "}
-              {new Date(kitten.homeDate).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </p>
-          )}
           {kitten.familyStory && (
             <p className="mt-2 text-sm leading-relaxed text-brand-slate line-clamp-2">
               {kitten.familyStory}

@@ -48,7 +48,7 @@ export const breedingCats: BreedingCat[] = [
     color: "Blue",
     pattern: "Solid",
     location: "atlanta",
-    photos: ["/images/cats/parent-cat-3.jpg"],
+    photos: [],
     healthTests: ["HCM Normal", "PKD Negative", "FeLV/FIV Negative", "Blood Type A"],
     titles: ["Grand Champion", "Regional Winner"],
     pedigreeNotes:
@@ -67,7 +67,7 @@ export const breedingCats: BreedingCat[] = [
     color: "Golden Shaded",
     pattern: "Shaded",
     location: "toronto",
-    photos: ["/images/cats/parent-cat-4.jpg"],
+    photos: [],
     healthTests: ["HCM Normal", "PKD Negative", "FeLV/FIV Negative", "Blood Type A"],
     titles: ["Grand Champion"],
     pedigreeNotes:

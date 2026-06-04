@@ -35,36 +35,36 @@ export function KittenDetailDialog({ kitten, open, onOpenChange }: KittenDetailD
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[90vh] max-w-2xl overflow-y-auto bg-white">
+      <DialogContent className="max-h-[90vh] w-[90vw] max-w-4xl sm:max-w-4xl overflow-y-auto bg-white">
         <DialogHeader>
-          <DialogTitle className="font-heading text-2xl">{kitten.name}</DialogTitle>
-          <DialogDescription className="text-brand-slate">
+          <DialogTitle className="font-heading text-4xl">{kitten.name}</DialogTitle>
+          <DialogDescription className="text-base text-brand-slate">
             {kitten.registeredName || `${kitten.color} ${kitten.pattern} British Shorthair`}
           </DialogDescription>
         </DialogHeader>
 
-        <div className="mt-4 space-y-6">
+        <div className="mt-6 space-y-8">
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-brand-ice">
             <Image
               src={kitten.photos[0]}
               alt={`${kitten.name} — ${kitten.color} British Shorthair`}
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            <Badge className={statusColors[kitten.status]}>
+          <div className="flex flex-wrap gap-3">
+            <Badge className={`px-3 py-1 text-sm ${statusColors[kitten.status]}`}>
               {isAtHome
                 ? "At Home"
                 : kitten.status.charAt(0).toUpperCase() + kitten.status.slice(1)}
             </Badge>
-            <Badge variant="outline">{kitten.sex === "male" ? "Boy" : "Girl"}</Badge>
-            <Badge variant="outline">
+            <Badge variant="outline" className="px-3 py-1 text-sm">{kitten.sex === "male" ? "Boy" : "Girl"}</Badge>
+            <Badge variant="outline" className="px-3 py-1 text-sm">
               {kitten.color} {kitten.pattern}
             </Badge>
-            {!isAtHome && <Badge variant="outline">{getAge(kitten.dob)}</Badge>}
-            <Badge variant="outline">
+            {!isAtHome && <Badge variant="outline" className="px-3 py-1 text-sm">{getAge(kitten.dob)}</Badge>}
+            <Badge variant="outline" className="px-3 py-1 text-sm">
               {kitten.location === "atlanta" ? "🇺🇸 Atlanta" : "🇨🇦 Toronto"}
             </Badge>
           </div>
