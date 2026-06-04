@@ -26,14 +26,14 @@ export default function OurCatsPage() {
         </p>
 
         <div className="mt-12">
-          <h2 className="text-2xl">Our Kings</h2>
+          <h2 className="text-2xl">Our Queens</h2>
           <div className="mt-6 grid gap-8 md:grid-cols-3">
             {queens.map((cat) => (
               <BreedingCatCard key={cat.id} cat={cat} />
             ))}
           </div>
 
-          <h2 className="mt-12 text-2xl">Our Queens</h2>
+          <h2 className="mt-12 text-2xl">Our Kings</h2>
           <div className="mt-6 grid gap-8 md:grid-cols-3">
             {kings.map((cat) => (
               <BreedingCatCard key={cat.id} cat={cat} />

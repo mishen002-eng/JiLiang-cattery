@@ -61,3 +61,14 @@ export interface GalleryImage {
   location: CatteryLocation;
   caption: string;
 }
+
+export interface PastLitter {
+  src: string;
+  name: string;
+  color: string;
+  sex: "male" | "female";
+  /** Override label, e.g. "Boy & Girl" for pairs */
+  sexLabel?: string;
+  location: string;
+  familyStory: string;
+}
