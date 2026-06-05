@@ -53,8 +53,7 @@ export function ParentCats() {
                     {cat.name}
                   </p>
                   <p className="mt-0.5 text-xs text-brand-slate">
-                    {cat.titles?.[0] || "Champion Line"} &middot; {cat.color} &middot;{" "}
-                    {cat.role === "queen" ? "Female" : "Male"}
+                    {cat.titles?.[0] || "Champion Line"} &middot; {cat.color}
                   </p>
                 </div>
               </div>
