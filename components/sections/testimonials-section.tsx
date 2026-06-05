@@ -13,20 +13,11 @@ export function TestimonialsSection() {
 
   // Mobile: 1 at a time
   const [mobileIndex, setMobileIndex] = useState(0);
-  const [slideDir, setSlideDir] = useState<"left" | "right">("left");
   const current = testimonials[mobileIndex];
   const touchStartX = useRef(0);
 
-  const goNext = () => {
-    if (mobileIndex >= testimonials.length - 1) return;
-    setSlideDir("left");
-    setMobileIndex((i) => i + 1);
-  };
-  const goPrev = () => {
-    if (mobileIndex <= 0) return;
-    setSlideDir("right");
-    setMobileIndex((i) => i - 1);
-  };
+  const goNext = () => { if (mobileIndex < testimonials.length - 1) setMobileIndex((i) => i + 1); };
+  const goPrev = () => { if (mobileIndex > 0) setMobileIndex((i) => i - 1); };
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -66,10 +57,7 @@ export function TestimonialsSection() {
           </div>
 
           <div
-            key={mobileIndex}
-            className={`mt-6 flex flex-col rounded-2xl border border-brand-ice-dark bg-white p-6 ${
-              slideDir === "left" ? "animate-slide-from-right" : "animate-slide-from-left"
-            }`}
+            className="mt-6 flex flex-col rounded-2xl border border-brand-ice-dark bg-white p-6"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
@@ -97,7 +85,7 @@ export function TestimonialsSection() {
             {testimonials.map((_, i) => (
               <button
                 key={i}
-                onClick={() => { setSlideDir(i > mobileIndex ? "left" : "right"); setMobileIndex(i); }}
+                onClick={() => setMobileIndex(i)}
                 className={`h-2 w-2 rounded-full transition-colors ${
                   i === mobileIndex ? "bg-brand-charcoal" : "bg-brand-ice-dark"
                 }`}
