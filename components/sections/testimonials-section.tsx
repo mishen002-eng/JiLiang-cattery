@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { testimonials } from "@/lib/testimonials";
 
@@ -13,7 +13,29 @@ export function TestimonialsSection() {
 
   // Mobile: 1 at a time
   const [mobileIndex, setMobileIndex] = useState(0);
+  const [slideDir, setSlideDir] = useState<"left" | "right">("left");
   const current = testimonials[mobileIndex];
+  const touchStartX = useRef(0);
+
+  const goNext = () => {
+    if (mobileIndex >= testimonials.length - 1) return;
+    setSlideDir("left");
+    setMobileIndex((i) => i + 1);
+  };
+  const goPrev = () => {
+    if (mobileIndex <= 0) return;
+    setSlideDir("right");
+    setMobileIndex((i) => i - 1);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    if (delta < -40) goNext();
+    if (delta > 40) goPrev();
+  };
 
   return (
     <section className="py-8 md:section-padding bg-brand-cream">
@@ -25,7 +47,7 @@ export function TestimonialsSection() {
             <h2>What Our Clients Say</h2>
             <div className="flex gap-2">
               <button
-                onClick={() => setMobileIndex((i) => Math.max(0, i - 1))}
+                onClick={goPrev}
                 disabled={mobileIndex === 0}
                 className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-brand-ice-dark bg-white transition-colors hover:bg-brand-cream disabled:opacity-30"
                 aria-label="Previous"
@@ -33,7 +55,7 @@ export function TestimonialsSection() {
                 <ChevronLeft className="h-4 w-4" />
               </button>
               <button
-                onClick={() => setMobileIndex((i) => Math.min(testimonials.length - 1, i + 1))}
+                onClick={goNext}
                 disabled={mobileIndex === testimonials.length - 1}
                 className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-brand-ice-dark bg-white transition-colors hover:bg-brand-cream disabled:opacity-30"
                 aria-label="Next"
@@ -43,7 +65,14 @@ export function TestimonialsSection() {
             </div>
           </div>
 
-          <div className="mt-6 flex flex-col rounded-2xl border border-brand-ice-dark bg-white p-6">
+          <div
+            key={mobileIndex}
+            className={`mt-6 flex flex-col rounded-2xl border border-brand-ice-dark bg-white p-6 ${
+              slideDir === "left" ? "animate-slide-from-right" : "animate-slide-from-left"
+            }`}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <div className="flex gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
@@ -68,7 +97,7 @@ export function TestimonialsSection() {
             {testimonials.map((_, i) => (
               <button
                 key={i}
-                onClick={() => setMobileIndex(i)}
+                onClick={() => { setSlideDir(i > mobileIndex ? "left" : "right"); setMobileIndex(i); }}
                 className={`h-2 w-2 rounded-full transition-colors ${
                   i === mobileIndex ? "bg-brand-charcoal" : "bg-brand-ice-dark"
                 }`}

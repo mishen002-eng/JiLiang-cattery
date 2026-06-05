@@ -15,7 +15,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "https://www.tiktok.com/@jl.british.shorthair?_r=1&_t=ZT-96h8rUdkgOL",
+    href: "https://www.tiktok.com/@jl.british.shorthair?_r=1&_t=ZP-96wYtOLHdzr",
     label: "TikTok",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
@@ -45,8 +45,8 @@ const infoLinks = [
 export function Footer() {
   return (
     <footer className="bg-brand-cream">
-      <div className="container-wide section-padding">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+      <div className="container-wide py-8 md:section-padding">
+        <div className="grid gap-6 md:grid-cols-2 md:gap-10 lg:grid-cols-5">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2">
@@ -55,28 +55,28 @@ export function Footer() {
                 alt="Jiliang Cattery logo"
                 width={2180}
                 height={2490}
-                className="h-10 w-auto"
+                className="h-8 w-auto md:h-10"
               />
               <div className="flex flex-col leading-tight">
-                <span className="font-heading text-[19px] font-normal tracking-tight text-brand-charcoal">
+                <span className="font-heading text-[16px] font-normal tracking-tight text-brand-charcoal md:text-[19px]">
                   JILIANG
                 </span>
-                <span className="text-[11px] font-light tracking-[0.3em] text-brand-slate uppercase">
+                <span className="text-[10px] font-light tracking-[0.25em] text-brand-slate uppercase md:text-[11px]">
                   CATTERY
                 </span>
               </div>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-brand-slate">
+            <p className="mt-3 text-xs leading-snug tracking-tight text-brand-slate">
               British Shorthair kittens of exceptional quality, raised with love and delivered with
               care.
             </p>
-            <div className="mt-4 flex gap-3">
+            <div className="mt-3 flex gap-2">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-brand-ice-dark bg-white transition-colors hover:bg-brand-charcoal hover:text-white"
+                  className="flex h-7 w-7 items-center justify-center rounded-full border border-brand-ice-dark bg-white transition-colors hover:bg-brand-charcoal hover:text-white"
                 >
                   {social.icon}
                 </a>
@@ -85,15 +85,15 @@ export function Footer() {
           </div>
 
           {/* Quick Links + Information — side by side on mobile, separate columns on md+ */}
-          <div className="grid grid-cols-2 gap-6 md:contents">
+          <div className="grid grid-cols-2 gap-4 md:contents">
             <div>
-              <h4 className="font-heading text-sm font-bold text-brand-charcoal">Quick Links</h4>
-              <ul className="mt-4 space-y-2.5">
+              <h4 className="font-heading text-xs font-bold tracking-tight text-brand-charcoal">Quick Links</h4>
+              <ul className="mt-3 space-y-0.5">
                 {quickLinks.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-brand-slate transition-colors hover:text-brand-brass"
+                      className="text-xs leading-snug tracking-tight text-brand-slate transition-colors hover:text-brand-brass"
                     >
                       {link.label}
                     </Link>
@@ -103,13 +103,13 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-heading text-sm font-bold text-brand-charcoal">Information</h4>
-              <ul className="mt-4 space-y-2.5">
+              <h4 className="font-heading text-xs font-bold tracking-tight text-brand-charcoal">Information</h4>
+              <ul className="mt-3 space-y-0.5">
                 {infoLinks.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-brand-slate transition-colors hover:text-brand-brass"
+                      className="text-xs leading-snug tracking-tight text-brand-slate transition-colors hover:text-brand-brass"
                     >
                       {link.label}
                     </Link>
@@ -121,25 +121,25 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-heading text-sm font-bold text-brand-charcoal">Contact Us</h4>
-            <ul className="mt-4 space-y-3">
+            <h4 className="font-heading text-xs font-bold tracking-tight text-brand-charcoal">Contact Us</h4>
+            <ul className="mt-3 space-y-1">
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-brand-slate" />
+                <Mail className="h-3.5 w-3.5 shrink-0 text-brand-slate" />
                 <a
                   href="mailto:jiliangcattery@gmail.com"
-                  className="text-sm text-brand-slate transition-colors hover:text-brand-brass"
+                  className="text-xs leading-snug tracking-tight text-brand-slate transition-colors hover:text-brand-brass"
                 >
                   jiliangcattery@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-brand-slate" />
-                <span className="text-sm text-brand-slate">Atlanta, GA & Toronto, ON</span>
+                <MapPin className="h-3.5 w-3.5 shrink-0 text-brand-slate" />
+                <span className="text-xs leading-snug tracking-tight text-brand-slate">Atlanta, GA & Toronto, ON</span>
               </li>
             </ul>
             <Link
               href="/apply"
-              className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-brand-charcoal px-5 py-2 text-sm font-medium text-brand-charcoal transition-colors hover:bg-brand-charcoal hover:text-white"
+              className="mt-4 inline-flex items-center gap-1 rounded-full border border-brand-charcoal px-4 py-1.5 text-xs font-medium text-brand-charcoal transition-colors hover:bg-brand-charcoal hover:text-white"
             >
               Inquire About Kittens <span aria-hidden="true">&rarr;</span>
             </Link>
@@ -167,15 +167,15 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-brand-ice-dark">
-        <div className="container-wide flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-          <p className="text-xs text-brand-slate">
+        <div className="container-wide flex flex-col items-center justify-between gap-1 py-2 sm:flex-row">
+          <p className="text-[10px] leading-snug tracking-tight text-brand-slate">
             &copy; {new Date().getFullYear()} JILIANG CATTERY. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <Link href="#" className="text-xs text-brand-slate transition-colors hover:text-brand-brass">
+          <div className="flex gap-4">
+            <Link href="#" className="text-[10px] leading-snug tracking-tight text-brand-slate transition-colors hover:text-brand-brass">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-xs text-brand-slate transition-colors hover:text-brand-brass">
+            <Link href="#" className="text-[10px] leading-snug tracking-tight text-brand-slate transition-colors hover:text-brand-brass">
               Terms of Service
             </Link>
           </div>
