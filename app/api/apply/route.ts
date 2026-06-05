@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
 import { applicationSchema } from "@/lib/schemas";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
@@ -18,21 +21,17 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true });
     }
 
-    // Log for development — replace with Resend in production
-    console.log("New application received:", {
-      name: `${result.data.firstName} ${result.data.lastName}`,
-      email: result.data.email,
-      country: result.data.country,
+    await resend.emails.send({
+      from: "Jiliang Cattery <onboarding@resend.dev>",
+      to: "jiliangcattery@gmail.com",
+      subject: `New Kitten Application: ${result.data.firstName} ${result.data.lastName}`,
+      html: `
+        <h2>New Kitten Application</h2>
+        <p><strong>Name:</strong> ${result.data.firstName} ${result.data.lastName}</p>
+        <p><strong>Email:</strong> ${result.data.email}</p>
+        <p><strong>Country:</strong> ${result.data.country}</p>
+      `,
     });
-
-    // TODO: Wire up Resend email
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: "Jiliang Cattery <noreply@jiliangcattery.com>",
-    //   to: locationEmail,
-    //   subject: `New Application: ${result.data.firstName} ${result.data.lastName}`,
-    //   html: `...`,
-    // });
 
     return NextResponse.json({ success: true });
   } catch {

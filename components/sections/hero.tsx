@@ -27,7 +27,7 @@ export function Hero() {
               size="lg"
               className="h-auto w-full justify-center rounded-full border border-brand-charcoal bg-brand-charcoal px-8 py-3.5 text-sm hover:bg-brand-charcoal/90 sm:w-auto"
             >
-              View Available Kittens
+              View Past Litters
             </Button>
             <Button
               render={<Link href="/about" />}

@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
 import { contactSchema } from "@/lib/schemas";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
@@ -18,21 +21,19 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true });
     }
 
-    console.log("New contact message:", {
-      name: result.data.name,
-      email: result.data.email,
-      subject: result.data.subject,
-      message: result.data.message,
+    await resend.emails.send({
+      from: "Jiliang Cattery <onboarding@resend.dev>",
+      to: "jiliangcattery@gmail.com",
+      subject: `Contact: ${result.data.subject}`,
+      html: `
+        <h2>New Contact Message</h2>
+        <p><strong>Name:</strong> ${result.data.name}</p>
+        <p><strong>Email:</strong> ${result.data.email}</p>
+        <p><strong>Subject:</strong> ${result.data.subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${result.data.message.replace(/\n/g, "<br>")}</p>
+      `,
     });
-
-    // TODO: Wire up Resend email
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: "Jiliang Cattery <noreply@jiliangcattery.com>",
-    //   to: "hello@jiliangcattery.com",
-    //   subject: `Contact: ${result.data.subject}`,
-    //   html: `...`,
-    // });
 
     return NextResponse.json({ success: true });
   } catch {

@@ -84,7 +84,7 @@ export default function ContactPage() {
               <Card className="border-brand-ice-dark">
                 <CardContent className="p-6 md:p-8">
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                    <input type="text" {...register("website")} className="sr-only" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+                    <input type="text" {...register("website")} className="sr-only" tabIndex={-1} autoComplete="off" />
                     <div>
                       <label className="text-sm font-medium text-brand-charcoal">Name *</label>
                       <Input {...register("name")} className="mt-1" />
@@ -111,7 +111,7 @@ export default function ContactPage() {
                       <Textarea {...register("message")} rows={5} className="mt-1" />
                       {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message.message}</p>}
                     </div>
-                    <Button type="submit" disabled={isSubmitting} className="h-auto w-full justify-center rounded-full border border-brand-brass bg-brand-brass py-3.5 text-sm text-white hover:bg-brand-brass/90 disabled:opacity-60">
+                    <Button type="button" onClick={() => handleSubmit(onSubmit)()} disabled={isSubmitting} className="h-auto w-full justify-center rounded-full border border-brand-brass bg-brand-brass py-3.5 text-sm text-white hover:bg-brand-brass/90 disabled:opacity-60">
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
