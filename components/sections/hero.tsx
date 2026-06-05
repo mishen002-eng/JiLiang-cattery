@@ -7,8 +7,8 @@ export function Hero() {
     <section className="relative overflow-hidden bg-brand-cream">
       <div className="container-wide flex flex-col items-center gap-8 py-12 lg:flex-row lg:gap-12">
         {/* Text Content */}
-        <div className="relative z-10 flex-1 text-center lg:text-left">
-          <p className="text-xs font-semibold tracking-[0.25em] text-brand-slate uppercase">
+        <div className="relative z-10 flex-1 text-left lg:text-left">
+          <p className="text-xs font-semibold tracking-[0.08em] text-brand-slate uppercase">
             British Shorthair. Exceptional by Nature.
           </p>
           <h1 className="mt-4 text-4xl leading-[1.1] md:text-5xl lg:text-6xl">
@@ -16,24 +16,24 @@ export function Hero() {
             <br />
             Trusted Worldwide.
           </h1>
-          <p className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-brand-slate lg:mx-0">
+          <p className="mt-6 max-w-lg text-base leading-snug tracking-tight text-brand-slate lg:mx-0">
             JILIANG CATTERY is a professional British Shorthair cattery dedicated to health,
             temperament and type. Our kittens are raised with love, science and experience — ready
             to bring joy to discerning families around the world.
           </p>
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:justify-start">
             <Button
               render={<Link href="/available" />}
               size="lg"
-              className="rounded-full bg-brand-charcoal px-8 text-base hover:bg-brand-charcoal/90"
+              className="h-auto w-full justify-center rounded-full border border-brand-charcoal bg-brand-charcoal px-8 py-3.5 text-sm hover:bg-brand-charcoal/90 sm:w-auto"
             >
-              View Available Kittens &rarr;
+              View Available Kittens
             </Button>
             <Button
               render={<Link href="/about" />}
               variant="outline"
               size="lg"
-              className="rounded-full border-brand-charcoal px-8 text-base text-brand-charcoal hover:bg-brand-charcoal hover:text-white"
+              className="h-auto w-full justify-center rounded-full border-brand-charcoal px-8 py-3.5 text-sm text-brand-charcoal hover:bg-brand-charcoal hover:text-white sm:w-auto"
             >
               About Our Cattery
             </Button>

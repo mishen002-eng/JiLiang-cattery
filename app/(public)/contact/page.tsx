@@ -57,15 +57,15 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="section-padding bg-brand-cream">
+    <section className="py-8 md:section-padding bg-brand-cream">
       <div className="container-wide">
         <h1 className="text-center">Contact Us</h1>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-brand-slate">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate">
           Have a question about our kittens or the adoption process? We would love to hear from you.
           We typically respond within 24–48 hours.
         </p>
 
-        <div className="mt-12">
+        <div className="mt-8 md:mt-12">
           {/* Contact Form */}
           <div className="mx-auto max-w-lg">
             {submitted ? (
@@ -75,7 +75,7 @@ export default function ContactPage() {
                     <Mail className="h-8 w-8 text-emerald-600" />
                   </div>
                   <h2 className="mt-4 text-2xl">Message Sent!</h2>
-                  <p className="mt-2 text-brand-slate">
+                  <p className="mt-2 text-base leading-snug tracking-tight text-brand-slate">
                     Thank you for reaching out. We will get back to you within 24–48 hours.
                   </p>
                 </CardContent>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                       <Textarea {...register("message")} rows={5} className="mt-1" />
                       {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message.message}</p>}
                     </div>
-                    <Button type="submit" disabled={isSubmitting} className="w-full bg-brand-brass hover:bg-brand-brass-dark">
+                    <Button type="submit" disabled={isSubmitting} className="h-auto w-full justify-center rounded-full border border-brand-brass bg-brand-brass py-3.5 text-sm text-white hover:bg-brand-brass/90 disabled:opacity-60">
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>

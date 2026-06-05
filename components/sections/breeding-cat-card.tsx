@@ -1,9 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import type { BreedingCat } from "@/lib/types";
 
 export function BreedingCatCard({ cat }: { cat: BreedingCat }) {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <Card className="overflow-hidden border-brand-ice-dark">
       <div className="relative aspect-square bg-brand-ice">
@@ -53,7 +58,15 @@ export function BreedingCatCard({ cat }: { cat: BreedingCat }) {
           ))}
         </div>
 
-        <p className="mt-4 text-sm leading-relaxed text-brand-slate">{cat.personality}</p>
+        <p className={`mt-4 text-sm leading-snug tracking-tight text-brand-slate ${!expanded ? "line-clamp-3" : ""}`}>
+          {cat.personality}
+        </p>
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="mt-1 text-xs font-medium text-brand-charcoal transition-colors hover:text-brand-brass"
+        >
+          {expanded ? "Read less ↑" : "Read more ↓"}
+        </button>
 
         <p className="mt-3 text-xs text-brand-slate-light">{cat.pedigreeNotes}</p>
       </CardContent>

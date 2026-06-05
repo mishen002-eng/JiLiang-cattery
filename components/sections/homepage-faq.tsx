@@ -10,7 +10,7 @@ export function HomepageFAQ() {
   const preview = faqItems.slice(0, 6);
 
   return (
-    <section className="section-padding bg-white">
+    <section className="py-8 md:section-padding bg-white">
       <div className="container-wide">
         <div className="flex items-center justify-between">
           <h2>Frequently Asked Questions</h2>

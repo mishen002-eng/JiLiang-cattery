@@ -631,19 +631,12 @@ export function ApplicationForm() {
             )}
 
             {/* ── Navigation ── */}
-            <div className="mt-8 flex justify-between">
-              {step > 0 ? (
-                <Button type="button" variant="outline" onClick={handleBack}>
-                  Back
-                </Button>
-              ) : (
-                <div />
-              )}
+            <div className="mt-8 flex flex-col items-center gap-3">
               {step < TOTAL_STEPS - 1 ? (
                 <Button
                   type="button"
                   onClick={handleNext}
-                  className="bg-brand-brass hover:bg-brand-brass-dark"
+                  className="h-auto w-full justify-center rounded-full border border-brand-brass bg-brand-brass py-3.5 text-sm text-white hover:bg-brand-brass/90"
                 >
                   Continue →
                 </Button>
@@ -652,9 +645,14 @@ export function ApplicationForm() {
                   type="button"
                   disabled={isSubmitting}
                   onClick={() => handleSubmit(onSubmit, onSubmitError)()}
-                  className="bg-brand-brass hover:bg-brand-brass-dark disabled:opacity-60"
+                  className="h-auto w-full justify-center rounded-full border border-brand-brass bg-brand-brass py-3.5 text-sm text-white hover:bg-brand-brass/90 disabled:opacity-60"
                 >
                   {isSubmitting ? "Submitting…" : "Submit Application"}
+                </Button>
+              )}
+              {step > 0 && (
+                <Button type="button" variant="outline" onClick={handleBack} className="h-auto w-full justify-center rounded-full border-brand-charcoal py-3.5 text-sm text-brand-charcoal hover:bg-brand-charcoal hover:text-white">
+                  Back
                 </Button>
               )}
             </div>

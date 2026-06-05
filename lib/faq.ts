@@ -11,7 +11,7 @@ export const faqItems: FAQItem[] = [
   {
     id: "faq-2",
     category: "Pricing & Deposits",
-    question: "How Does the Deposit & Reservation Process Work?",
+    question: "How Does the Deposit and Reservation Process Work?",
     answer:
       "Waitlist Deposit\n\nWe require a non-refundable deposit of $200 USD or $300 CAD to join our waitlist. This deposit is applied toward the total purchase price. Once your application is approved and the deposit is received, your kitten is officially reserved for you.\n\nDeposit is non-refundable if the Buyer cancels for any reason, including but not limited to: moving, change of mind, or allergies (please think carefully before making a decision).\n\nIf the Buyer is unsatisfied with the chosen litter, the deposit can be transferred to another litter within 1 year, with up to two changes allowed.\n\nIf the Breeder cancels the sale (e.g., due to serious life-threatening health issues or genetic issues in the kitten), the Buyer will be offered one free chance to choose another kitten.\n\nReservation of a Current Available Kitten\n\nFor kittens that are currently available and ready for reservation, a reservation fee of 50% of the kitten price is required to secure the kitten.\n\nThis reservation fee is also non-refundable if the Buyer cancels for any personal reason, including change of mind, moving, or allergies.\n\nIf the Breeder cancels the sale due to health or genetic concerns, the Buyer will be offered the option to choose another available kitten.",
   },

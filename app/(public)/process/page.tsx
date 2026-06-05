@@ -34,10 +34,10 @@ const rightItems: IncludedItem[] = [
 export default function ProcessPage() {
   return (
     <div className="bg-brand-cream">
-      <section className="section-padding">
+      <section className="py-8 md:section-padding">
         <div className="container-narrow">
           <h1 className="text-center">Adoption Process</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-brand-slate">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate">
             From application to homecoming, here is everything you need to know about adopting a
             Jiliang Cattery kitten.
           </p>
@@ -45,10 +45,10 @@ export default function ProcessPage() {
       </section>
 
       {/* Steps */}
-      <section className="bg-white section-padding">
+      <section className="py-8 md:section-padding bg-white">
         <div className="container-narrow">
           <h2>How It Works</h2>
-          <div className="mt-8 space-y-8">
+          <div className="mt-8 space-y-6">
             {[
               {
                 step: 1,
@@ -76,13 +76,13 @@ export default function ProcessPage() {
                 desc: "Kittens go home between 16–20 weeks of age, fully vaccinated, microchipped, spayed/neutered, and well-socialized. Pickup is available at our Atlanta or Toronto locations, or transportation can be arranged.",
               },
             ].map((item) => (
-              <div key={item.step} className="flex gap-6">
+              <div key={item.step} className="flex gap-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-brass text-sm font-bold text-white">
                   {item.step}
                 </div>
                 <div>
                   <h3 className="text-lg">{item.title}</h3>
-                  <p className="mt-1 leading-relaxed text-brand-slate">{item.desc}</p>
+                  <p className="mt-1 text-base leading-snug tracking-tight text-brand-slate">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -91,10 +91,10 @@ export default function ProcessPage() {
       </section>
 
       {/* Pricing */}
-      <section className="section-padding">
+      <section className="py-8 md:section-padding">
         <div className="container-narrow">
           <h2 className="text-center">Pricing</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="mt-6 grid gap-4 md:mt-8 md:grid-cols-2 md:gap-6">
             <Card className="border-brand-ice-dark">
               <CardContent className="p-6 text-center">
                 <p className="flex items-center justify-center gap-1.5 text-sm font-medium text-brand-slate">JiLiang US <img src="https://flagcdn.com/w20/us.png" width="20" height="15" alt="US" /></p>
@@ -110,26 +110,26 @@ export default function ProcessPage() {
               </CardContent>
             </Card>
           </div>
-          <p className="mt-4 text-center text-sm text-brand-slate">
+          <p className="mt-4 text-center text-sm leading-snug tracking-tight text-brand-slate">
             We do not price our kittens based on color or gender. Pricing is evaluated according to each kitten&apos;s overall quality, including body structure, muscular development, coat quality, head type, and skull shape. In general, pet families often select from the lower to mid price range, while breeding and show-focused homes typically pursue kittens from the higher end of the range.
           </p>
         </div>
       </section>
 
       {/* What's Included */}
-      <section className="bg-white section-padding">
+      <section className="py-8 md:section-padding bg-white">
         <div className="container-narrow">
           <h2 className="text-center">What Comes with Your Kitten</h2>
-          <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-x-32 md:grid-cols-2">
+          <div className="mx-auto mt-6 grid max-w-3xl grid-cols-1 gap-x-32 md:mt-8 md:grid-cols-2">
             {[leftItems, rightItems].map((col, ci) => (
               <div key={ci}>
                 {col.map((item) => (
                   <div key={item.label} className="flex items-start gap-3 border-b border-brand-ice py-3 last:border-0">
                     <svg className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                    <span className="text-brand-charcoal">
+                    <span className="text-sm leading-snug tracking-tight text-brand-charcoal">
                       {item.label}
-                      {item.note && item.noteBelow && <><br /><em className="text-sm text-brand-slate">({item.note})</em></>}
-                      {item.note && !item.noteBelow && <em className="ml-1 text-brand-slate">({item.note})</em>}
+                      {item.note && item.noteBelow && <><br /><em className="text-xs text-brand-slate">({item.note})</em></>}
+                      {item.note && !item.noteBelow && <em className="ml-1 text-xs text-brand-slate">({item.note})</em>}
                     </span>
                   </div>
                 ))}
@@ -140,14 +140,14 @@ export default function ProcessPage() {
       </section>
 
       {/* Transport */}
-      <section className="section-padding">
+      <section className="py-8 md:section-padding">
         <div className="container-narrow">
           <h2 className="text-center">Transport Options</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="mt-6 grid gap-4 md:mt-8 md:grid-cols-2 md:gap-6">
             <Card className="border-brand-ice-dark">
               <CardContent className="p-6">
                 <h3 className="text-lg">Local Pickup</h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-slate">
+                <p className="mt-2 text-sm leading-snug tracking-tight text-brand-slate">
                   Pick up your kitten directly from our home in Atlanta or Toronto. We will spend
                   time going over care instructions and introduce you to your kitten's parents.
                 </p>
@@ -157,7 +157,7 @@ export default function ProcessPage() {
             <Card className="border-brand-ice-dark">
               <CardContent className="p-6">
                 <h3 className="text-lg">Ground Transport</h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-slate">
+                <p className="mt-2 text-sm leading-snug tracking-tight text-brand-slate">
                   For families within driving distance, we can arrange a personal delivery or meet at
                   a convenient halfway point or door-to-door service. Available within a reasonable radius of either location.
                 </p>
@@ -167,7 +167,7 @@ export default function ProcessPage() {
             <Card className="border-brand-ice-dark">
               <CardContent className="p-6">
                 <h3 className="text-lg">Flight Nanny</h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-slate">
+                <p className="mt-2 text-sm leading-snug tracking-tight text-brand-slate">
                   A trusted handler accompanies your kitten in-cabin on a direct flight to your
                   nearest major airport. Available worldwide.
                 </p>
@@ -177,11 +177,11 @@ export default function ProcessPage() {
             <Card className="border-brand-ice-dark">
               <CardContent className="p-6">
                 <h3 className="text-lg">Pet Flight Cargo</h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-slate">
+                <p className="mt-2 text-sm leading-snug tracking-tight text-brand-slate">
                   We&apos;re happy to assist with transportation for your kitten via airline cargo — with no service fee. Available for Canadian and USA domestic flights, subject to seasonal restrictions depending on departure and destination.
                 </p>
                 <p className="mt-4 text-sm font-medium text-brand-charcoal">Customers are responsible for:</p>
-                <ul className="mt-2 space-y-1 text-sm text-brand-slate">
+                <ul className="mt-2 space-y-1 text-sm leading-snug tracking-tight text-brand-slate">
                   <li>• Airline fee <em>(approx. $300–$500 USD/CAD, paid directly to the airline)</em></li>
                   <li>• Airline-approved crate <em>(approx. $40–$60 USD/CAD, yours to keep)</em></li>
                   <li>• Required documentation <em>(approx. $80–$110 USD/CAD)</em></li>
@@ -194,38 +194,36 @@ export default function ProcessPage() {
       </section>
 
       {/* Health Guarantee */}
-      <section className="bg-white section-padding">
+      <section className="py-8 md:section-padding bg-white">
         <div className="container-narrow">
           <h2 className="text-center">Health Guarantee</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-brand-slate">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate">
             No matter what happens, you are never alone. Your breeder will always stand by you and your kitten, providing support, guidance, and care every step of the way. 🐾
           </p>
 
-          <div className="mt-10 space-y-6">
-            {/* One-Year */}
+          <div className="mt-6 space-y-4 md:mt-10 md:space-y-6">
             <Card className="border-brand-ice-dark">
-              <CardContent className="p-8">
+              <CardContent className="p-6 md:p-8">
                 <h3 className="text-lg">One-Year Basic Medical Support</h3>
-                <p className="mt-3 leading-relaxed text-brand-slate">
+                <p className="mt-3 text-base leading-snug tracking-tight text-brand-slate">
                   We want your kitten to start life happy and healthy. For the first year, we provide basic care medication support for common minor issues, including respiratory infections, mild tummy troubles, eye infections, minor skin issues, and routine deworming.
                 </p>
-                <p className="mt-3 leading-relaxed text-brand-slate">
+                <p className="mt-3 text-base leading-snug tracking-tight text-brand-slate">
                   Medications are provided directly from our cattery when available. This support is provided as breeder assistance only and is not a reimbursement service or veterinary care. All medical decisions and treatments should always be handled by a licensed veterinarian.
                 </p>
-                <p className="mt-3 text-sm text-brand-slate/80 italic">
+                <p className="mt-3 text-sm leading-snug tracking-tight text-brand-slate/80 italic">
                   Support is provided on a case-by-case basis and is limited to reasonable quantities.
                 </p>
               </CardContent>
             </Card>
 
-            {/* Serious Illness */}
             <Card className="border-brand-ice-dark">
-              <CardContent className="p-8">
+              <CardContent className="p-6 md:p-8">
                 <h3 className="text-lg">Serious Illness Replacement</h3>
-                <p className="mt-3 leading-relaxed text-brand-slate">
+                <p className="mt-3 text-base leading-snug tracking-tight text-brand-slate">
                   We understand how heartbreaking it can be if a kitten becomes seriously ill. If your kitten is diagnosed with FIP or HCM within 3 years of going home, we will offer a replacement kitten of equal value, giving you peace of mind.
                 </p>
-                <ul className="mt-3 space-y-1.5 text-sm text-brand-slate">
+                <ul className="mt-3 space-y-1.5 text-sm leading-snug tracking-tight text-brand-slate">
                   <li>• Diagnosis must be confirmed by a licensed veterinarian with written medical documentation, and veterinary records must be provided for review.</li>
                   <li>• This policy applies strictly to FIP and HCM only and does not include any other diseases or conditions.</li>
                   <li>• This guarantee does not cover accidents, injuries, or environmental factors after the kitten leaves our care.</li>
@@ -233,24 +231,22 @@ export default function ProcessPage() {
               </CardContent>
             </Card>
 
-            {/* PKD */}
             <Card className="border-brand-ice-dark">
-              <CardContent className="p-8">
+              <CardContent className="p-6 md:p-8">
                 <h3 className="text-lg">PKD Genetic Disease Lifetime Guarantee</h3>
-                <p className="mt-3 leading-relaxed text-brand-slate">
+                <p className="mt-3 text-base leading-snug tracking-tight text-brand-slate">
                   Your kitten&apos;s health is very important to us. Our breeding cats are carefully screened for PKD, and we do not breed known carriers.
                 </p>
-                <p className="mt-3 leading-relaxed text-brand-slate">
+                <p className="mt-3 text-base leading-snug tracking-tight text-brand-slate">
                   If PKD is ever confirmed through genetic testing or veterinary diagnosis, we will provide a replacement kitten of equal value.
                 </p>
               </CardContent>
             </Card>
 
-            {/* Important Notes */}
             <Card className="border-brand-ice-dark bg-brand-cream">
-              <CardContent className="p-8">
+              <CardContent className="p-6 md:p-8">
                 <h3 className="text-lg">Important Notes</h3>
-                <ul className="mt-3 space-y-1.5 text-sm text-brand-slate">
+                <ul className="mt-3 space-y-1.5 text-sm leading-snug tracking-tight text-brand-slate">
                   <li>• This health guarantee applies only to the original adopter and is non-transferable.</li>
                   <li>• It does not cover accidents, injuries, neglect, or conditions caused by environmental factors after adoption.</li>
                 </ul>
@@ -261,19 +257,21 @@ export default function ProcessPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-brand-brass section-padding">
+      <section className="py-8 md:section-padding bg-brand-brass">
         <div className="container-narrow text-center">
           <h2 className="text-white">Ready to Get Started?</h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/80">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-snug tracking-tight text-white/80">
             Submit your application today. We review applications within 3–5 business days.
           </p>
-          <Button
-            render={<Link href="/apply" />}
-            size="lg"
-            className="mt-8 bg-white text-brand-brass hover:bg-brand-cream"
-          >
-            Start Your Application
-          </Button>
+          <div className="mt-6 flex flex-col items-center">
+            <Button
+              render={<Link href="/apply" />}
+              size="lg"
+              className="h-auto w-full justify-center rounded-full border border-white bg-white/30 px-8 py-3.5 text-sm text-white hover:bg-white/50 sm:w-auto"
+            >
+              Start Your Application
+            </Button>
+          </div>
         </div>
       </section>
     </div>

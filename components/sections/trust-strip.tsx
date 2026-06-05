@@ -2,6 +2,7 @@
 
 import { Award, HeartPulse, Smile, Truck } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 const trustItems = [
   {
@@ -9,7 +10,7 @@ const trustItems = [
     title: "About JILIANG Cattery",
     description:
       "JILIANG is a registered British Shorthair cattery with 10+ years of experience. We focus on health, temperament and consistent type. Our cats carry selected bloodlines and a recognizable JILIANG style.",
-    link: { href: "/about", label: "Learn more about us" },
+    link: { href: "/about", label: "Learn more" },
   },
   {
     icon: HeartPulse,
@@ -31,30 +32,32 @@ const trustItems = [
   },
 ];
 
+function TrustCard({ item }: { item: typeof trustItems[number] }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="rounded-2xl border border-brand-ice-dark bg-white p-4 transition-shadow hover:shadow-md lg:p-6">
+      <h3 className="text-sm font-bold text-brand-charcoal lg:text-base">{item.title}</h3>
+      <p className={`mt-2 text-xs leading-snug tracking-tight text-brand-slate lg:text-sm ${!expanded ? "line-clamp-3" : ""}`}>
+        {item.description}
+      </p>
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="mt-2 text-xs font-medium text-brand-charcoal transition-colors hover:text-brand-brass"
+      >
+        {expanded ? "Read less ↑" : "Read more ↓"}
+      </button>
+    </div>
+  );
+}
+
 export function TrustStrip() {
   return (
     <section className="section-padding bg-white">
       <div className="container-wide">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-6">
           {trustItems.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-brand-ice-dark bg-white p-6 transition-shadow hover:shadow-md"
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-cream">
-                <item.icon className="h-6 w-6 text-brand-brass" />
-              </div>
-              <h3 className="text-base font-bold text-brand-charcoal">{item.title}</h3>
-              <p className="mt-2 text-sm leading-snug text-brand-slate">{item.description}</p>
-              {item.link && (
-                <Link
-                  href={item.link.href}
-                  className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-brand-charcoal transition-colors hover:text-brand-brass"
-                >
-                  {item.link.label} <span aria-hidden="true">&rarr;</span>
-                </Link>
-              )}
-            </div>
+            <TrustCard key={item.title} item={item} />
           ))}
         </div>
       </div>

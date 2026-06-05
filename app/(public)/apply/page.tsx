@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 
 export default function ApplyPage() {
   return (
-    <section className="section-padding bg-brand-cream">
+    <section className="py-8 md:section-padding bg-brand-cream">
       <div className="container-wide">
         <h1 className="text-center">Kitten Application</h1>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-brand-slate">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate">
           Thank you for your interest in a Jiliang Cattery kitten. This short application helps us
           find the perfect match for your family. We review every application personally and will
           be in touch within 3–5 business days.
         </p>
-        <div className="mt-12">
+        <div className="mt-8 md:mt-12">
           <ApplicationForm />
         </div>
       </div>

@@ -39,27 +39,33 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="section-padding bg-white">
+    <section className="py-8 md:section-padding bg-white">
       <div className="container-wide">
         <h2 className="text-center">How to Reserve a Kitten</h2>
-        <div className="mt-12 flex flex-col gap-6 lg:flex-row lg:items-stretch">
+        <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-stretch lg:mt-12">
           {/* Steps */}
-          <div className="grid flex-1 grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="flex flex-1 flex-col gap-3 lg:grid lg:grid-cols-5 lg:gap-4">
             {steps.map((step) => (
               <div
                 key={step.number}
-                className="flex flex-col items-center rounded-2xl border border-brand-ice-dark bg-white p-5 text-center"
+                className="flex items-center gap-4 rounded-2xl border border-brand-ice-dark bg-white p-4 lg:flex-col lg:items-center lg:p-5 lg:text-center"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-cream">
+                {/* Icon */}
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-cream lg:rounded-full">
                   <step.icon className="h-5 w-5 text-brand-brass" />
                 </div>
-                <div className="mt-3 flex h-7 w-7 items-center justify-center rounded-full bg-brand-brass text-xs font-bold text-white">
-                  {step.number}
+                {/* Text */}
+                <div className="flex-1 lg:w-full">
+                  <div className="flex items-center gap-2 lg:mt-3 lg:justify-center">
+                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-brass text-[10px] font-bold text-white lg:h-7 lg:w-7 lg:text-xs">
+                      {step.number}
+                    </div>
+                    <h3 className="text-sm font-bold text-brand-charcoal">{withSansAmpersand(step.title)}</h3>
+                  </div>
+                  <p className="mt-1 text-xs leading-snug text-brand-slate lg:mt-1.5 lg:leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
-                <h3 className="mt-2 text-sm font-bold text-brand-charcoal">{withSansAmpersand(step.title)}</h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-brand-slate">
-                  {step.description}
-                </p>
               </div>
             ))}
           </div>

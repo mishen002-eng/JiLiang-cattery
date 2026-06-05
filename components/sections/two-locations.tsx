@@ -18,13 +18,13 @@ export function ParentCats() {
   const featured = cats.slice(0, 4);
 
   return (
-    <section className="section-padding bg-brand-cream">
+    <section className="py-8 md:section-padding bg-brand-cream">
       <div className="container-wide">
         <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:gap-16">
           {/* Text */}
           <div className="lg:max-w-xs">
             <h2 className="text-3xl md:text-4xl">Our Parent Cats</h2>
-            <p className="mt-4 leading-relaxed text-brand-slate">
+            <p className="mt-4 text-base leading-snug tracking-tight text-brand-slate">
               Carefully selected for outstanding type, excellent health and stable temperament.
             </p>
             <Button

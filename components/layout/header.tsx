@@ -83,6 +83,7 @@ function NavDropdown({
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [openSection, setOpenSection] = useState<string | null>(null);
   const pathname = usePathname();
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -90,13 +91,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50">
       {/* Trust Bar */}
-      <div className="border-b border-brand-ice-dark bg-[#f9f4ee]">
-        <div className="container-wide flex h-9 items-center justify-between">
-          <div className="flex items-center gap-6">
+      <div className="hidden border-b border-brand-ice-dark bg-[#f9f4ee] sm:block">
+        <div className="container-wide flex h-8 items-center justify-between">
+          <div className="flex items-center gap-3 sm:gap-6">
             {trustBarItems.map((item) => (
-              <div key={item.label} className="hidden items-center gap-1.5 sm:flex">
-                <item.icon className="h-3.5 w-3.5 text-brand-slate" />
-                <span className="text-xs text-brand-slate">{item.label}</span>
+              <div key={item.label} className="flex items-center gap-1 sm:gap-1.5">
+                <item.icon className="h-3 w-3 text-brand-slate sm:h-3.5 sm:w-3.5" />
+                <span className="text-[10px] text-brand-slate sm:text-xs">{item.label}</span>
               </div>
             ))}
           </div>
@@ -105,22 +106,22 @@ export function Header() {
 
       {/* Main Navigation */}
       <nav className="border-b border-brand-ice-dark bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-        <div className="container-wide flex h-20 items-center justify-between">
+        <div className="container-wide flex h-14 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-2 md:gap-3">
             <Image
               src="/images/logo/jiliang_cat_logo_transparent_2x.png"
               alt="Jiliang Cattery logo"
               width={2180}
               height={2490}
               priority
-              className="h-14 w-auto"
+              className="h-10 w-auto md:h-14"
             />
             <div className="flex flex-col leading-tight">
-              <span className="font-heading text-[27px] font-normal tracking-tight text-brand-charcoal">
+              <span className="font-heading text-[21px] font-normal tracking-tight text-brand-charcoal md:text-[27px]">
                 JILIANG
               </span>
-              <span className="text-[15px] font-light tracking-[0.3em] text-brand-slate uppercase">
+              <span className="text-[11px] font-light tracking-[0.3em] text-brand-slate uppercase md:text-[15px]">
                 CATTERY
               </span>
             </div>
@@ -167,27 +168,37 @@ export function Header() {
             </Link>
 
             <div className="lg:hidden">
-              <Sheet open={open} onOpenChange={setOpen}>
+              <Sheet open={open} onOpenChange={(v) => { setOpen(v); if (!v) setOpenSection(null); }}>
                 <SheetTrigger>
                   <span className="cursor-pointer p-2 text-brand-charcoal" aria-label="Open menu">
                     {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                   </span>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-72 bg-white">
-                  <SheetTitle className="font-heading text-lg font-bold text-brand-charcoal">
+                <SheetContent side="right" className="sm:max-w-xs bg-white px-5 pt-4">
+                  <SheetTitle className="font-heading text-base font-bold text-brand-charcoal">
                     Menu
                   </SheetTitle>
-                  <div className="mt-6 flex flex-col gap-4">
+                  <div className="mt-5 flex flex-col gap-3">
                     {navLinks.map((link) => (
                       <div key={link.label}>
-                        <Link
-                          href={link.href}
-                          onClick={() => setOpen(false)}
-                          className="text-lg font-medium text-brand-charcoal transition-colors hover:text-brand-brass"
-                        >
-                          {link.label}
-                        </Link>
-                        {"children" in link && link.children && (
+                        {"children" in link && link.children ? (
+                          <button
+                            onClick={() => setOpenSection(openSection === link.label ? null : link.label)}
+                            className="flex w-full items-center justify-between text-base font-medium text-brand-charcoal transition-colors hover:text-brand-brass"
+                          >
+                            {link.label}
+                            <ChevronDown className={cn("h-4 w-4 text-brand-slate transition-transform", openSection === link.label && "rotate-180")} />
+                          </button>
+                        ) : (
+                          <Link
+                            href={link.href}
+                            onClick={() => setOpen(false)}
+                            className="text-base font-medium text-brand-charcoal transition-colors hover:text-brand-brass"
+                          >
+                            {link.label}
+                          </Link>
+                        )}
+                        {"children" in link && link.children && openSection === link.label && (
                           <div className="ml-4 mt-2 flex flex-col gap-2">
                             {link.children.map((child) => (
                               <Link
@@ -206,9 +217,9 @@ export function Header() {
                     <Link
                       href="/apply"
                       onClick={() => setOpen(false)}
-                      className="mt-4 inline-flex items-center justify-center rounded-full bg-brand-charcoal px-5 py-2.5 text-sm font-medium text-white"
+                      className="mt-5 flex w-full items-center justify-center rounded-full bg-brand-charcoal px-4 py-2.5 text-sm font-medium text-white"
                     >
-                      Inquire About Kittens &rarr;
+                      Inquire About Kittens
                     </Link>
                   </div>
                 </SheetContent>

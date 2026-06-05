@@ -84,38 +84,39 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-heading text-sm font-bold text-brand-charcoal">Quick Links</h4>
-            <ul className="mt-4 space-y-2.5">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-brand-slate transition-colors hover:text-brand-brass"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Quick Links + Information — side by side on mobile, separate columns on md+ */}
+          <div className="grid grid-cols-2 gap-6 md:contents">
+            <div>
+              <h4 className="font-heading text-sm font-bold text-brand-charcoal">Quick Links</h4>
+              <ul className="mt-4 space-y-2.5">
+                {quickLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-brand-slate transition-colors hover:text-brand-brass"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Information */}
-          <div>
-            <h4 className="font-heading text-sm font-bold text-brand-charcoal">Information</h4>
-            <ul className="mt-4 space-y-2.5">
-              {infoLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-brand-slate transition-colors hover:text-brand-brass"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <h4 className="font-heading text-sm font-bold text-brand-charcoal">Information</h4>
+              <ul className="mt-4 space-y-2.5">
+                {infoLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-brand-slate transition-colors hover:text-brand-brass"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Contact */}
