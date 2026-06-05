@@ -16,7 +16,7 @@ export default function AboutPage() {
       <section className="py-8 md:section-padding">
         <div className="container-narrow">
           <h1 className="text-center">About Jiliang Cattery</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate md:text-lg md:leading-relaxed md:tracking-normal">
             A passion for British Shorthairs, a commitment to excellence, and two homes united by
             one mission: raising extraordinary kittens.
           </p>
@@ -37,19 +37,19 @@ export default function AboutPage() {
             </div>
             <div>
               <h2>Our Breeding Program</h2>
-              <p className="mt-4 text-base leading-snug tracking-tight text-brand-slate">
+              <p className="mt-4 text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
                 JILIANG is an established, registered British Shorthair cattery built on more than a
                 decade of hands-on breeding experience. Over the years, our program has grown from a
                 small personal passion into a structured cattery with a clear standard, careful
                 selection, and long-term direction.
               </p>
-              <p className="mt-4 text-base leading-snug tracking-tight text-brand-slate">
+              <p className="mt-4 text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
                 Our breeding work brings together selected lines from North America, Australia and
                 Europe, while continuing to develop our own understanding of the British Shorthair.
                 We value strong structure, balanced temperament, healthy development and the soft,
                 substantial expression that defines a quality British Shorthair.
               </p>
-              <p className="mt-4 text-base leading-snug tracking-tight text-brand-slate">
+              <p className="mt-4 text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
                 Show results have always been an important part of our journey, but they are not the
                 only measure of our work. For us, the real goal is to produce cats with consistent
                 quality, stable character and a recognizable JILIANG style — cats that represent
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 <span className="text-2xl">🏥</span>
               </div>
               <h3 className="mt-4 text-lg">Health First</h3>
-              <p className="mt-2 text-sm leading-snug tracking-tight text-brand-slate">
+              <p className="mt-2 text-sm leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
                 Every breeding cat undergoes comprehensive health screening including HCM
                 echocardiograms, PKD DNA testing, and FeLV/FIV testing. We never cut corners on
                 health.
@@ -81,7 +81,7 @@ export default function AboutPage() {
                 <span className="text-2xl">🏠</span>
               </div>
               <h3 className="mt-4 text-lg">Raised Underfoot</h3>
-              <p className="mt-2 text-sm leading-snug tracking-tight text-brand-slate">
+              <p className="mt-2 text-sm leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
                 Our kittens are born and raised in our homes — not in a separate facility. They grow
                 up with children, dogs, and the everyday rhythms of family life, producing
                 confident, well-adjusted companions.
@@ -92,7 +92,7 @@ export default function AboutPage() {
                 <span className="text-2xl">❤️</span>
               </div>
               <h3 className="mt-4 text-lg">Lifetime Support</h3>
-              <p className="mt-2 text-sm leading-snug tracking-tight text-brand-slate">
+              <p className="mt-2 text-sm leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
                 Our relationship does not end at pickup. We provide lifetime breeder support for
                 every kitten we place — from nutrition advice to behavioral questions, we are always
                 just a message away.
@@ -115,23 +115,23 @@ export default function AboutPage() {
           </div>
           <h2 className="mb-6 md:mb-8">Our Story</h2>
           <div className="flex flex-col gap-3 md:gap-4">
-            <p className="text-base leading-snug tracking-tight text-brand-slate">
+            <p className="text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
               Our story began with a blue British Shorthair imported from Europe. At the time, we
               were based in Canada, learning the breed through daily care, show preparation, and
               years of hands-on experience with the British Shorthair standard.
             </p>
-            <p className="text-base leading-snug tracking-tight text-brand-slate">
+            <p className="text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
               That first cat became an important part of our foundation and earned Best British
               Shorthair recognition with CCA. More importantly, he is still living with us today —
               not only as a show memory, but as family, and as the beginning of everything JILIANG
               would become.
             </p>
-            <p className="text-base leading-snug tracking-tight text-brand-slate">
+            <p className="text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
               Over the years, our program has continued to grow. We introduced selected North
               American, Australian and European lines, expanded into more colors, and gradually
               developed our own direction in type, temperament and overall expression.
             </p>
-            <p className="text-base leading-snug tracking-tight text-brand-slate">
+            <p className="text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
               In 2024, JILIANG expanded to Atlanta, Georgia, establishing our U.S. branch while
               continuing our journey in the CFA and TICA show rings. Today, our cats carry that
               foundation forward — combining international bloodlines, thoughtful selection, and a
@@ -145,7 +145,7 @@ export default function AboutPage() {
       <section className="py-8 md:section-padding">
         <div className="container-narrow text-center">
           <h2>Meet Our Cats</h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-snug tracking-tight text-brand-slate">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
             Get to know the queens and kings behind our breeding program, or browse our available
             kittens.
           </p>

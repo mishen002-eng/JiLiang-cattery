@@ -7,8 +7,8 @@ export function Hero() {
     <section className="relative overflow-hidden bg-brand-cream">
       <div className="container-wide flex flex-col items-center gap-8 py-12 lg:flex-row lg:gap-12">
         {/* Text Content */}
-        <div className="relative z-10 flex-1 text-left lg:text-left">
-          <p className="text-xs font-semibold tracking-[0.08em] text-brand-slate uppercase">
+        <div className="relative z-10 flex-1 text-center lg:text-left">
+          <p className="text-xs font-semibold tracking-[0.08em] text-brand-slate uppercase md:tracking-[0.25em]">
             British Shorthair. Exceptional by Nature.
           </p>
           <h1 className="mt-4 text-4xl leading-[1.1] md:text-5xl lg:text-6xl">
@@ -16,7 +16,7 @@ export function Hero() {
             <br />
             Trusted Worldwide.
           </h1>
-          <p className="mt-6 max-w-lg text-base leading-snug tracking-tight text-brand-slate lg:mx-0">
+          <p className="mx-auto mt-6 max-w-lg text-base leading-snug tracking-tight text-brand-slate md:text-lg md:leading-relaxed md:tracking-normal lg:mx-0">
             JILIANG CATTERY is a professional British Shorthair cattery dedicated to health,
             temperament and type. Our kittens are raised with love, science and experience — ready
             to bring joy to discerning families around the world.
