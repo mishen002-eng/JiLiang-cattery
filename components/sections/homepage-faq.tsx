@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
@@ -10,7 +10,7 @@ export function HomepageFAQ() {
   const preview = faqItems.slice(0, 6);
 
   return (
-    <section className="py-8 md:section-padding bg-white">
+    <section className="py-8 md:py-16 lg:py-24 bg-white">
       <div className="container-wide">
         <div className="flex items-center justify-between">
           <h2>Frequently Asked Questions</h2>

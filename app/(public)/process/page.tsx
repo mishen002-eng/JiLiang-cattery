@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -34,7 +34,7 @@ const rightItems: IncludedItem[] = [
 export default function ProcessPage() {
   return (
     <div className="bg-brand-cream">
-      <section className="py-8 md:section-padding">
+      <section className="py-8 md:py-16 lg:py-24">
         <div className="container-narrow">
           <h1 className="text-center">Adoption Process</h1>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate md:text-lg md:leading-relaxed md:tracking-normal">
@@ -45,7 +45,7 @@ export default function ProcessPage() {
       </section>
 
       {/* Steps */}
-      <section className="py-8 md:section-padding bg-white">
+      <section className="py-8 md:py-16 lg:py-24 bg-white">
         <div className="container-narrow">
           <h2>How It Works</h2>
           <div className="mt-8 space-y-6">
@@ -91,7 +91,7 @@ export default function ProcessPage() {
       </section>
 
       {/* Pricing */}
-      <section className="py-8 md:section-padding">
+      <section className="py-8 md:py-16 lg:py-24">
         <div className="container-narrow">
           <h2 className="text-center">Pricing</h2>
           <div className="mt-6 grid gap-4 md:mt-8 md:grid-cols-2 md:gap-6">
@@ -117,7 +117,7 @@ export default function ProcessPage() {
       </section>
 
       {/* What's Included */}
-      <section className="py-8 md:section-padding bg-white">
+      <section className="py-8 md:py-16 lg:py-24 bg-white">
         <div className="container-narrow">
           <h2 className="text-center">What Comes with Your Kitten</h2>
           <div className="mx-auto mt-6 grid max-w-3xl grid-cols-1 gap-x-32 md:mt-8 md:grid-cols-2">
@@ -126,10 +126,10 @@ export default function ProcessPage() {
                 {col.map((item) => (
                   <div key={item.label} className="flex items-start gap-3 border-b border-brand-ice py-3 last:border-0">
                     <svg className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                    <span className="text-sm leading-snug tracking-tight text-brand-charcoal md:leading-relaxed md:tracking-normal">
+                    <span className="text-sm leading-snug tracking-tight text-brand-charcoal md:text-base md:leading-relaxed md:tracking-normal">
                       {item.label}
-                      {item.note && item.noteBelow && <><br /><em className="text-xs text-brand-slate">({item.note})</em></>}
-                      {item.note && !item.noteBelow && <em className="ml-1 text-xs text-brand-slate">({item.note})</em>}
+                      {item.note && item.noteBelow && <><br /><em className="text-sm text-brand-slate">({item.note})</em></>}
+                      {item.note && !item.noteBelow && <em className="ml-1 text-brand-slate">({item.note})</em>}
                     </span>
                   </div>
                 ))}
@@ -140,7 +140,7 @@ export default function ProcessPage() {
       </section>
 
       {/* Transport */}
-      <section className="py-8 md:section-padding">
+      <section className="py-8 md:py-16 lg:py-24">
         <div className="container-narrow">
           <h2 className="text-center">Transport Options</h2>
           <div className="mt-6 grid gap-4 md:mt-8 md:grid-cols-2 md:gap-6">
@@ -194,7 +194,7 @@ export default function ProcessPage() {
       </section>
 
       {/* Health Guarantee */}
-      <section className="py-8 md:section-padding bg-white">
+      <section className="py-8 md:py-16 lg:py-24 bg-white">
         <div className="container-narrow">
           <h2 className="text-center">Health Guarantee</h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
@@ -257,7 +257,7 @@ export default function ProcessPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-8 md:section-padding bg-brand-brass">
+      <section className="py-8 md:py-16 lg:py-24 bg-brand-brass">
         <div className="container-narrow text-center">
           <h2 className="text-white">Ready to Get Started?</h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-snug tracking-tight text-white/80 md:leading-relaxed md:tracking-normal">
@@ -267,7 +267,7 @@ export default function ProcessPage() {
             <Button
               render={<Link href="/apply" />}
               size="lg"
-              className="h-auto w-full justify-center rounded-full border border-white bg-white/30 px-8 py-3.5 text-sm text-white hover:bg-white/50 sm:w-auto"
+              className="h-auto w-full justify-center rounded-full border border-white bg-white/30 px-8 py-3.5 text-sm md:text-base text-white hover:bg-white/50 sm:w-auto"
             >
               Start Your Application
             </Button>

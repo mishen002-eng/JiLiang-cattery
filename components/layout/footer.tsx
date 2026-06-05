@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -45,7 +45,7 @@ const infoLinks = [
 export function Footer() {
   return (
     <footer className="bg-brand-cream">
-      <div className="container-wide py-8 md:section-padding">
+      <div className="container-wide py-8 md:py-16 lg:py-24">
         <div className="grid gap-6 md:grid-cols-2 md:gap-10 lg:grid-cols-5">
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -66,11 +66,11 @@ export function Footer() {
                 </span>
               </div>
             </div>
-            <p className="mt-3 text-xs leading-snug tracking-tight text-brand-slate md:text-sm">
+            <p className="mt-3 text-xs leading-snug tracking-tight text-brand-slate md:mt-4 md:leading-relaxed md:tracking-normal md:text-sm">
               British Shorthair kittens of exceptional quality, raised with love and delivered with
               care.
             </p>
-            <div className="mt-3 flex gap-2">
+            <div className="mt-3 flex gap-2 md:mt-4 md:gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -88,12 +88,12 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-4 md:contents">
             <div>
               <h4 className="font-heading text-xs font-bold tracking-tight text-brand-charcoal md:text-sm">Quick Links</h4>
-              <ul className="mt-3 space-y-0.5 md:space-y-1">
+              <ul className="mt-3 space-y-0.5 md:mt-4 md:space-y-2.5">
                 {quickLinks.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-xs leading-snug tracking-tight text-brand-slate transition-colors hover:text-brand-brass md:text-sm"
+                      className="text-xs leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal transition-colors hover:text-brand-brass md:text-sm"
                     >
                       {link.label}
                     </Link>
@@ -104,12 +104,12 @@ export function Footer() {
 
             <div>
               <h4 className="font-heading text-xs font-bold tracking-tight text-brand-charcoal md:text-sm">Information</h4>
-              <ul className="mt-3 space-y-0.5 md:space-y-1">
+              <ul className="mt-3 space-y-0.5 md:mt-4 md:space-y-2.5">
                 {infoLinks.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-xs leading-snug tracking-tight text-brand-slate transition-colors hover:text-brand-brass md:text-sm"
+                      className="text-xs leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal transition-colors hover:text-brand-brass md:text-sm"
                     >
                       {link.label}
                     </Link>
@@ -122,19 +122,19 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h4 className="font-heading text-xs font-bold tracking-tight text-brand-charcoal md:text-sm">Contact Us</h4>
-            <ul className="mt-3 space-y-1">
+            <ul className="mt-3 space-y-1 md:mt-4 md:space-y-3">
               <li className="flex items-center gap-2">
                 <Mail className="h-3.5 w-3.5 shrink-0 text-brand-slate md:h-4 md:w-4" />
                 <a
                   href="mailto:jiliangcattery@gmail.com"
-                  className="text-xs leading-snug tracking-tight text-brand-slate transition-colors hover:text-brand-brass md:text-sm"
+                  className="text-xs leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal transition-colors hover:text-brand-brass md:text-sm"
                 >
                   jiliangcattery@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-3.5 w-3.5 shrink-0 text-brand-slate md:h-4 md:w-4" />
-                <span className="text-xs leading-snug tracking-tight text-brand-slate md:text-sm">Atlanta, GA &amp; Toronto, ON</span>
+                <span className="text-xs leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal md:text-sm">Atlanta, GA &amp; Toronto, ON</span>
               </li>
             </ul>
             <Link
@@ -168,14 +168,14 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-brand-ice-dark">
         <div className="container-wide flex flex-col items-center justify-between gap-1 py-2 sm:flex-row">
-          <p className="text-[10px] leading-snug tracking-tight text-brand-slate md:text-xs">
+          <p className="text-[10px] leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal md:text-xs">
             &copy; {new Date().getFullYear()} JILIANG CATTERY. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <Link href="#" className="text-[10px] leading-snug tracking-tight text-brand-slate transition-colors hover:text-brand-brass md:text-xs">
+            <Link href="#" className="text-[10px] leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal transition-colors hover:text-brand-brass md:text-xs">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-[10px] leading-snug tracking-tight text-brand-slate transition-colors hover:text-brand-brass md:text-xs">
+            <Link href="#" className="text-[10px] leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal transition-colors hover:text-brand-brass md:text-xs">
               Terms of Service
             </Link>
           </div>

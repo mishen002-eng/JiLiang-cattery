@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -25,7 +25,7 @@ export function Hero() {
             <Button
               render={<Link href="/available" />}
               size="lg"
-              className="h-auto w-full justify-center rounded-full border border-brand-charcoal bg-brand-charcoal px-8 py-3.5 text-sm hover:bg-brand-charcoal/90 sm:w-auto"
+              className="h-auto w-full justify-center rounded-full border border-brand-charcoal bg-brand-charcoal px-8 py-3.5 text-sm md:text-base hover:bg-brand-charcoal/90 sm:w-auto"
             >
               View Past Litters
             </Button>
@@ -33,7 +33,7 @@ export function Hero() {
               render={<Link href="/about" />}
               variant="outline"
               size="lg"
-              className="h-auto w-full justify-center rounded-full border-brand-charcoal px-8 py-3.5 text-sm text-brand-charcoal hover:bg-brand-charcoal hover:text-white sm:w-auto"
+              className="h-auto w-full justify-center rounded-full border-brand-charcoal px-8 py-3.5 text-sm md:text-base text-brand-charcoal hover:bg-brand-charcoal hover:text-white sm:w-auto"
             >
               About Our Cattery
             </Button>

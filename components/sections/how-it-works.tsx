@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { ClipboardList, Clock, Camera, CreditCard, Truck, Mail } from "lucide-react";
 import Link from "next/link";
@@ -39,7 +39,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="py-8 md:section-padding bg-white">
+    <section className="py-8 md:py-16 lg:py-24 bg-white">
       <div className="container-wide">
         <h2 className="text-center">How to Reserve a Kitten</h2>
         <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-stretch lg:mt-12">
@@ -56,11 +56,11 @@ export function HowItWorks() {
                 </div>
                 {/* Text */}
                 <div className="flex-1 lg:w-full">
-                  <div className="flex items-center gap-2 lg:mt-3 lg:justify-center">
+                  <div className="flex items-center gap-2 lg:mt-3 lg:flex-col lg:items-center lg:justify-center lg:gap-0">
                     <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-brass text-[10px] font-bold text-white lg:h-7 lg:w-7 lg:text-xs">
                       {step.number}
                     </div>
-                    <h3 className="text-sm font-bold text-brand-charcoal">{withSansAmpersand(step.title)}</h3>
+                    <h3 className="text-sm font-bold text-brand-charcoal lg:mt-2">{withSansAmpersand(step.title)}</h3>
                   </div>
                   <p className="mt-1 text-xs leading-snug text-brand-slate lg:mt-1.5 lg:leading-relaxed">
                     {step.description}

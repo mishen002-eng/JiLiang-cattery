@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -18,13 +18,13 @@ export function ParentCats() {
   const featured = cats.slice(0, 4);
 
   return (
-    <section className="py-8 md:section-padding bg-brand-cream">
+    <section className="py-8 md:py-16 lg:py-24 bg-brand-cream">
       <div className="container-wide">
         <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:gap-16">
           {/* Text */}
           <div className="lg:max-w-xs">
             <h2 className="text-3xl md:text-4xl">Our Parent Cats</h2>
-            <p className="mt-4 text-base leading-snug tracking-tight text-brand-slate">
+            <p className="mt-4 text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
               Carefully selected for outstanding type, excellent health and stable temperament.
             </p>
             <Button

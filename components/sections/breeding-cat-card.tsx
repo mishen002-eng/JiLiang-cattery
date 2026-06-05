@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -59,7 +59,7 @@ export function BreedingCatCard({ cat }: { cat: BreedingCat }) {
         </div>
 
         {/* Mobile: clamp + expand. Desktop: always full text */}
-        <p className={`mt-4 text-sm leading-snug tracking-tight text-brand-slate md:line-clamp-none ${!expanded ? "line-clamp-3" : ""}`}>
+        <p className={`mt-4 text-sm leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal md:line-clamp-none ${!expanded ? "line-clamp-3" : ""}`}>
           {cat.personality}
         </p>
         {/* Read more — mobile only */}

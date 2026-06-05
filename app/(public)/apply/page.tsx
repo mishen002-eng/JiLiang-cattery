@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { ApplicationForm } from "@/components/sections/application-form";
 
 export const metadata: Metadata = {
@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 export default function ApplyPage() {
   return (
-    <section className="py-8 md:section-padding bg-brand-cream">
+    <section className="py-8 md:py-16 lg:py-24 bg-brand-cream">
       <div className="container-wide">
         <h1 className="text-center">Kitten Application</h1>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
           Thank you for your interest in a Jiliang Cattery kitten. This short application helps us
           find the perfect match for your family. We review every application personally and will
           be in touch within 3–5 business days.

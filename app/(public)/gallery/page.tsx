@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -23,7 +23,7 @@ export default function GalleryPage() {
   const currentImage = lightboxIndex !== null ? filtered[lightboxIndex] : null;
 
   return (
-    <section className="py-8 md:section-padding bg-brand-cream">
+    <section className="py-8 md:py-16 lg:py-24 bg-brand-cream">
       <div className="container-wide">
         <h1 className="text-center">Gallery</h1>
         <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">

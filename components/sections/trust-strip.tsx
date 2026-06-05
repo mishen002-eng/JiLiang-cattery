@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Award, HeartPulse, Smile, Truck } from "lucide-react";
 import Link from "next/link";
@@ -10,7 +10,7 @@ const trustItems = [
     title: "About JILIANG Cattery",
     description:
       "JILIANG is a registered British Shorthair cattery with 10+ years of experience. We focus on health, temperament and consistent type. Our cats carry selected bloodlines and a recognizable JILIANG style.",
-    link: { href: "/about", label: "Read more" },
+    link: { href: "/about", label: "Learn more about us" },
   },
   {
     icon: HeartPulse,
@@ -45,7 +45,7 @@ function TrustCard({ item }: { item: typeof trustItems[number] }) {
       <h3 className="text-sm font-bold text-brand-charcoal md:text-base">{item.title}</h3>
 
       {/* Mobile: clamp + expand. Desktop: always full text */}
-      <p className={`mt-2 text-xs leading-snug tracking-tight text-brand-slate md:line-clamp-none md:text-sm ${!expanded ? "line-clamp-3" : ""}`}>
+      <p className={`mt-2 text-xs leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal md:line-clamp-none md:text-sm ${!expanded ? "line-clamp-3" : ""}`}>
         {item.description}
       </p>
 

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -95,10 +95,10 @@ export default function JiliangFamiliesPage() {
 
   return (
     <>
-      <section className="py-8 md:section-padding bg-brand-cream">
+      <section className="py-8 md:py-16 lg:py-24 bg-brand-cream">
         <div className="container-wide">
           <h1 className="text-center">Past Litters</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
             Meet the kittens who have found their forever homes. Each one carries the best of Jiliang
             Cattery with them. Over nearly a decade, we have successfully placed hundreds of healthy,
             well-socialized kittens into loving homes around the world. We are proud to share selected

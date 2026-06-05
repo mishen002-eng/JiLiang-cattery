@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import {
   Accordion,
   AccordionContent,
@@ -18,10 +18,10 @@ export default function FAQPage() {
   const categories = [...new Set(faqItems.map((item) => item.category))];
 
   return (
-    <section className="py-8 md:section-padding bg-brand-cream">
+    <section className="py-8 md:py-16 lg:py-24 bg-brand-cream">
       <div className="container-narrow">
         <h1 className="text-center">Frequently Asked Questions</h1>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
           Everything you need to know about adopting from Jiliang Cattery. Can&apos;t find your
           answer?{" "}
           <a href="/contact" className="text-brand-brass underline">
@@ -46,7 +46,7 @@ export default function FAQPage() {
                       <AccordionTrigger className="text-left font-medium text-brand-charcoal hover:text-brand-brass">
                         {withSansAmpersand(item.question)}
                       </AccordionTrigger>
-                      <AccordionContent className="text-sm leading-snug tracking-tight text-brand-slate">
+                      <AccordionContent className="text-sm leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal md:text-base">
                         <div className="space-y-3">
                           {item.answer.split("\n\n").map((block, i) => {
                             const isHeader = block.length < 60 && !block.endsWith(".") && !block.endsWith(")") && !block.includes("$");

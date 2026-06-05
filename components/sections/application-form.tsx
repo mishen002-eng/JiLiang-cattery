@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -636,7 +636,7 @@ export function ApplicationForm() {
                 <Button
                   type="button"
                   onClick={handleNext}
-                  className="h-auto w-full justify-center rounded-full border border-brand-brass bg-brand-brass py-3.5 text-sm text-white hover:bg-brand-brass/90"
+                  className="h-auto w-full justify-center rounded-full border border-brand-brass bg-brand-brass py-3.5 text-sm md:text-base text-white hover:bg-brand-brass/90"
                 >
                   Continue →
                 </Button>
@@ -645,13 +645,13 @@ export function ApplicationForm() {
                   type="button"
                   disabled={isSubmitting}
                   onClick={() => handleSubmit(onSubmit, onSubmitError)()}
-                  className="h-auto w-full justify-center rounded-full border border-brand-brass bg-brand-brass py-3.5 text-sm text-white hover:bg-brand-brass/90 disabled:opacity-60"
+                  className="h-auto w-full justify-center rounded-full border border-brand-brass bg-brand-brass py-3.5 text-sm md:text-base text-white hover:bg-brand-brass/90 disabled:opacity-60"
                 >
                   {isSubmitting ? "Submitting…" : "Submit Application"}
                 </Button>
               )}
               {step > 0 && (
-                <Button type="button" variant="outline" onClick={handleBack} className="h-auto w-full justify-center rounded-full border-brand-charcoal py-3.5 text-sm text-brand-charcoal hover:bg-brand-charcoal hover:text-white">
+                <Button type="button" variant="outline" onClick={handleBack} className="h-auto w-full justify-center rounded-full border-brand-charcoal py-3.5 text-sm md:text-base text-brand-charcoal hover:bg-brand-charcoal hover:text-white">
                   Back
                 </Button>
               )}

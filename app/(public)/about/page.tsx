@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <div className="bg-brand-cream">
       {/* Hero */}
-      <section className="py-8 md:section-padding">
+      <section className="py-8 md:py-16 lg:py-24">
         <div className="container-narrow">
           <h1 className="text-center">About Jiliang Cattery</h1>
           <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate md:text-lg md:leading-relaxed md:tracking-normal">
@@ -24,7 +24,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder Story */}
-      <section className="py-8 md:section-padding bg-white">
+      <section className="py-8 md:py-16 lg:py-24 bg-white">
         <div className="container-narrow">
           <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
             <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-brand-ice">
@@ -61,7 +61,7 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy */}
-      <section className="py-8 md:section-padding">
+      <section className="py-8 md:py-16 lg:py-24">
         <div className="container-narrow">
           <h2 className="text-center">Our Philosophy</h2>
           <div className="mt-8 grid gap-6 md:mt-12 md:grid-cols-3 md:gap-8">
@@ -103,7 +103,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-8 md:section-padding bg-white">
+      <section className="py-8 md:py-16 lg:py-24 bg-white">
         <div className="container-narrow">
           <div className="relative aspect-[1579/1126] w-full overflow-hidden rounded-2xl bg-brand-ice mb-6 md:mb-8">
             <Image
@@ -142,7 +142,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-8 md:section-padding">
+      <section className="py-8 md:py-16 lg:py-24">
         <div className="container-narrow text-center">
           <h2>Meet Our Cats</h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">
@@ -153,14 +153,14 @@ export default function AboutPage() {
             <Button
               render={<Link href="/our-cats" />}
               size="lg"
-              className="h-auto w-full justify-center rounded-full border border-brand-brass bg-brand-brass px-8 py-3.5 text-sm text-white hover:bg-brand-brass/90 sm:w-auto"
+              className="h-auto w-full justify-center rounded-full border border-brand-brass bg-brand-brass px-8 py-3.5 text-sm md:text-base text-white hover:bg-brand-brass/90 sm:w-auto"
             >
               Our Breeding Cats
             </Button>
             <Button
               render={<Link href="/available" />}
               size="lg"
-              className="h-auto w-full justify-center rounded-full border border-brand-brass bg-transparent px-8 py-3.5 text-sm text-brand-brass hover:bg-brand-brass hover:text-white sm:w-auto"
+              className="h-auto w-full justify-center rounded-full border border-brand-brass bg-transparent px-8 py-3.5 text-sm md:text-base text-brand-brass hover:bg-brand-brass hover:text-white sm:w-auto"
             >
               Our Past Litters
             </Button>
