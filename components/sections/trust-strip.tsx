@@ -10,7 +10,7 @@ const trustItems = [
     title: "About JILIANG Cattery",
     description:
       "JILIANG is a registered British Shorthair cattery with 10+ years of experience. We focus on health, temperament and consistent type. Our cats carry selected bloodlines and a recognizable JILIANG style.",
-    link: { href: "/about", label: "Learn more" },
+    link: { href: "/about", label: "Read more" },
   },
   {
     icon: HeartPulse,
@@ -36,17 +36,36 @@ function TrustCard({ item }: { item: typeof trustItems[number] }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="rounded-2xl border border-brand-ice-dark bg-white p-4 transition-shadow hover:shadow-md lg:p-6">
-      <h3 className="text-sm font-bold text-brand-charcoal lg:text-base">{item.title}</h3>
-      <p className={`mt-2 text-xs leading-snug tracking-tight text-brand-slate lg:text-sm ${!expanded ? "line-clamp-3" : ""}`}>
+    <div className="rounded-2xl border border-brand-ice-dark bg-white p-4 transition-shadow hover:shadow-md md:p-6">
+      {/* Icon — desktop only */}
+      <div className="mb-3 hidden h-10 w-10 items-center justify-center rounded-xl bg-brand-cream md:flex">
+        <item.icon className="h-5 w-5 text-brand-brass" />
+      </div>
+
+      <h3 className="text-sm font-bold text-brand-charcoal md:text-base">{item.title}</h3>
+
+      {/* Mobile: clamp + expand. Desktop: always full text */}
+      <p className={`mt-2 text-xs leading-snug tracking-tight text-brand-slate md:line-clamp-none md:text-sm ${!expanded ? "line-clamp-3" : ""}`}>
         {item.description}
       </p>
+
+      {/* Read more — mobile only */}
       <button
         onClick={() => setExpanded(!expanded)}
-        className="mt-2 text-xs font-medium text-brand-charcoal transition-colors hover:text-brand-brass"
+        className="mt-2 text-xs font-medium text-brand-charcoal transition-colors hover:text-brand-brass md:hidden"
       >
         {expanded ? "Read less ↑" : "Read more ↓"}
       </button>
+
+      {/* Link — desktop only */}
+      {item.link && (
+        <Link
+          href={item.link.href}
+          className="mt-3 hidden text-sm font-medium text-brand-brass transition-colors hover:underline md:inline-flex"
+        >
+          {item.link.label} ↓
+        </Link>
+      )}
     </div>
   );
 }

@@ -58,12 +58,14 @@ export function BreedingCatCard({ cat }: { cat: BreedingCat }) {
           ))}
         </div>
 
-        <p className={`mt-4 text-sm leading-snug tracking-tight text-brand-slate ${!expanded ? "line-clamp-3" : ""}`}>
+        {/* Mobile: clamp + expand. Desktop: always full text */}
+        <p className={`mt-4 text-sm leading-snug tracking-tight text-brand-slate md:line-clamp-none ${!expanded ? "line-clamp-3" : ""}`}>
           {cat.personality}
         </p>
+        {/* Read more — mobile only */}
         <button
           onClick={() => setExpanded(!expanded)}
-          className="mt-1 text-xs font-medium text-brand-charcoal transition-colors hover:text-brand-brass"
+          className="mt-1 text-xs font-medium text-brand-charcoal transition-colors hover:text-brand-brass md:hidden"
         >
           {expanded ? "Read less ↑" : "Read more ↓"}
         </button>

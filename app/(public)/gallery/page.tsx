@@ -26,22 +26,24 @@ const currentImage = lightboxIndex !== null ? filtered[lightboxIndex] : null;
 
       </div>
 
-      {/* Instagram-style Grid */}
-      <div className="mt-6 grid grid-cols-3 gap-0.5">
-        {filtered.map((image, i) => (
-          <div
-            key={`${image.src}-${i}`}
-            className="relative aspect-square cursor-pointer overflow-hidden bg-brand-ice"
-            onClick={() => openLightbox(i)}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover transition-transform hover:scale-[1.03]"
-            />
-          </div>
-        ))}
+      {/* Mobile: full-width Instagram grid. Desktop: contained with spacing. */}
+      <div className="mt-6 md:mx-auto md:mt-12 md:max-w-7xl md:px-4">
+        <div className="grid grid-cols-3 gap-0.5 md:gap-4">
+          {filtered.map((image, i) => (
+            <div
+              key={`${image.src}-${i}`}
+              className="relative aspect-square cursor-pointer overflow-hidden bg-brand-ice md:rounded-lg"
+              onClick={() => openLightbox(i)}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover transition-transform hover:scale-[1.03]"
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Lightbox */}

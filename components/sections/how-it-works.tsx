@@ -51,7 +51,7 @@ export function HowItWorks() {
                 className="flex items-center gap-4 rounded-2xl border border-brand-ice-dark bg-white p-4 lg:flex-col lg:items-center lg:p-5 lg:text-center"
               >
                 {/* Icon */}
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-cream lg:rounded-full">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-cream md:rounded-full">
                   <step.icon className="h-5 w-5 text-brand-brass" />
                 </div>
                 {/* Text */}
