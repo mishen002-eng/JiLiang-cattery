@@ -20,18 +20,41 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true });
     }
 
+    const d = result.data;
+    const subjectMap: Record<string, string> = {
+      general: "General Inquiry",
+      kitten_inquiry: "Kitten Inquiry",
+      visit_request: "Visit Request",
+    };
+    const subjectLabel = subjectMap[d.subject] ?? d.subject;
+
+    const html = `
+<html><body style="font-family:sans-serif;color:#333;max-width:600px;margin:0 auto;">
+<h2 style="border-bottom:2px solid #c9a96e;padding-bottom:8px;">New Contact Message</h2>
+<p><strong>Name:</strong> ${d.name}</p>
+<p><strong>Email:</strong> ${d.email}</p>
+<p><strong>Subject:</strong> ${subjectLabel}</p>
+<h3 style="color:#c9a96e;">Message</h3>
+<p style="white-space:pre-wrap;">${d.message.replace(/\n/g, "<br>")}</p>
+</body></html>`;
+
+    const text = [
+      "NEW CONTACT MESSAGE",
+      "===================",
+      `Name: ${d.name}`,
+      `Email: ${d.email}`,
+      `Subject: ${subjectLabel}`,
+      "",
+      "Message:",
+      d.message,
+    ].join("\n");
+
     await resend.emails.send({
       from: "Jiliang Cattery <onboarding@resend.dev>",
       to: "jiliangcattery@gmail.com",
-      subject: `Contact: ${result.data.subject}`,
-      html: `
-        <h2>New Contact Message</h2>
-        <p><strong>Name:</strong> ${result.data.name}</p>
-        <p><strong>Email:</strong> ${result.data.email}</p>
-        <p><strong>Subject:</strong> ${result.data.subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${result.data.message.replace(/\n/g, "<br>")}</p>
-      `,
+      subject: `Contact (${subjectLabel}): ${d.name}`,
+      html,
+      text,
     });
 
     return NextResponse.json({ success: true });
