@@ -1,16 +1,20 @@
-﻿"use client";
-
-import { useState, useEffect } from "react";
+import type { Metadata } from "next";
 import { BreedingCatCard } from "@/components/sections/breeding-cat-card";
-import type { BreedingCat } from "@/lib/types";
+import { readCats } from "@/lib/data";
+
+// Read live data on every request (parity with the previous client fetch),
+// while still emitting fully crawlable server-rendered HTML.
+export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Our Cats",
+  description:
+    "Meet the TICA / CFA / WCF registered Queens and Kings behind Jiliang Cattery's British Shorthair program — health-screened breeding cats selected for temperament, breed type, and genetic diversity.",
+  alternates: { canonical: "/our-cats" },
+};
 
 export default function OurCatsPage() {
-  const [breedingCats, setBreedingCats] = useState<BreedingCat[]>([]);
-
-  useEffect(() => {
-    fetch("/api/cats").then((r) => r.json()).then(setBreedingCats);
-  }, []);
-
+  const breedingCats = readCats();
   const queens = breedingCats.filter((c) => c.role === "queen");
   const kings = breedingCats.filter((c) => c.role === "king");
 

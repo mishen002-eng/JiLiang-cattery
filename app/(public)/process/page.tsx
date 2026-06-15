@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Adoption Process",
   description:
     "Learn about our adoption process, pricing, deposits, transport options, and what comes with every Jiliang Cattery kitten.",
+  alternates: { canonical: "/process" },
 };
 
 type IncludedItem = { label: string; note?: string; noteBelow?: boolean };

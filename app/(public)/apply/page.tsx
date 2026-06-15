@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Apply to Adopt",
   description:
     "Submit an adoption application for a British Shorthair kitten from Jiliang Cattery in Atlanta or Toronto.",
+  alternates: { canonical: "/apply" },
 };
 
 export default function ApplyPage() {

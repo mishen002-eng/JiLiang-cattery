@@ -7,11 +7,26 @@ import {
 } from "@/components/ui/accordion";
 import { faqItems } from "@/lib/faq";
 import { withSansAmpersand } from "@/lib/utils";
+import { JsonLd } from "@/components/seo/json-ld";
+
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
     "Common questions about adopting a British Shorthair kitten from Jiliang Cattery, including pricing, health guarantees, and transport.",
+  alternates: { canonical: "/faq" },
 };
 
 export default function FAQPage() {
@@ -19,6 +34,7 @@ export default function FAQPage() {
 
   return (
     <section className="py-8 md:py-16 lg:py-24 bg-brand-cream">
+      <JsonLd data={faqLd} />
       <div className="container-narrow">
         <h1 className="text-center">Frequently Asked Questions</h1>
         <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal">

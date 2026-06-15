@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Learn about Jiliang Cattery, our journey from Atlanta to Toronto, and our commitment to ethically breeding British Shorthair cats.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
