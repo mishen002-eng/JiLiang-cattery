@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -17,6 +17,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { FormProgress } from "./form-progress";
 import { applicationSchema, stepFields, type ApplicationFormData } from "@/lib/schemas";
+import { trackEvent } from "@/lib/analytics";
 
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
@@ -93,6 +94,11 @@ export function ApplicationForm() {
     formState: { errors, isSubmitting },
   } = form;
 
+  // Fire a thank-you view when the inline confirmation renders (no route change).
+  useEffect(() => {
+    if (submitted) trackEvent("thank_you_page_view");
+  }, [submitted]);
+
   const TOTAL_STEPS = 5;
 
   const handleNext = async () => {
@@ -124,6 +130,7 @@ export function ApplicationForm() {
         body: JSON.stringify(data),
       });
       if (res.ok) {
+        trackEvent("application_submit");
         setSubmitted(true);
         toast.success("Application submitted successfully!");
       } else {

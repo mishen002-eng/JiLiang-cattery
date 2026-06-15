@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 const socialLinks = [
   {
@@ -76,6 +77,9 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
+                  onClick={() =>
+                    trackEvent(social.label === "Instagram" ? "instagram_click" : "tiktok_click")
+                  }
                   className="flex h-7 w-7 items-center justify-center rounded-full border border-brand-ice-dark bg-white transition-colors hover:bg-brand-charcoal hover:text-white md:h-9 md:w-9"
                 >
                   {social.icon}
@@ -127,6 +131,7 @@ export function Footer() {
                 <Mail className="h-3.5 w-3.5 shrink-0 text-brand-slate md:h-4 md:w-4" />
                 <a
                   href="mailto:jiliangcattery@gmail.com"
+                  onClick={() => trackEvent("email_click")}
                   className="text-xs leading-snug tracking-tight text-brand-slate md:leading-relaxed md:tracking-normal transition-colors hover:text-brand-brass md:text-sm"
                 >
                   jiliangcattery@gmail.com

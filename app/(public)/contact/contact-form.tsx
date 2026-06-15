@@ -17,6 +17,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail } from "lucide-react";
 import { contactSchema, type ContactFormData } from "@/lib/schemas";
+import { trackEvent } from "@/lib/analytics";
 
 export function ContactPageContent() {
   const [submitted, setSubmitted] = useState(false);
@@ -46,6 +47,7 @@ export function ContactPageContent() {
         body: JSON.stringify(data),
       });
       if (res.ok) {
+        trackEvent("contact_submit");
         setSubmitted(true);
         toast.success("Message sent successfully!");
       } else {
